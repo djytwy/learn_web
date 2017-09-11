@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery作业</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<style type="text/css">
+			 *{margin:0;padding:0;}
+			body{font-size:12px;color:#222;font-family:Verdana,Arial,Helvetica,sans-serif;background:#f0f0f0;text-align: center;}
+			#main{width: 960px;margin: 0px auto;height :600px; padding: 0px;position: relative;overflow: hidden;}
+			.preNext{width:45px;height:100px;position:absolute;top:360px;background:url(img/sprite.png) no-repeat 0 0;cursor:pointer;}
+			.pre{left:0;top:50%;background-position:left ;}
+			.next{right:0;top:50%;background-position:right top;}
+			ul,li{list-style:none;}
+			ul{height: 600px;overflow: hidden;position: absolute;}
+			ul li{float:left;width:960px;height:600px;overflow:hidden;position:relative;background:#000;}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<ul left: -3600px; width: 4000px;>
+				<li><img src="img/1.png"/></li>
+				<li><img src="img/2.png"/></li>
+				<li><img src="img/3.png"/></li>
+				<li><img src="img/4.png"/></li>
+				<li><img src="img/5.png"/></li>
+				<li><img src="img/6.png"/></li>
+				<li><img src="img/7.png"/></li>
+				<li><img src="img/8.png"/></li>
+				<li><img src="img/9.png"/></li>
+				<li><img src="img/10.png"/></li>
+			</ul>
+			<span class="preNext pre"></span>
+			<span class="preNext next"></span>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			var sWidth = $("#main").width(); //获取图片的宽度
+            var len = $("#main ul li").length; //获取图片总共的数量
+            var index = 1;//引导标识
+            var picTimer;//计数器的计数值
+            
+            //当鼠标移动到.preNext的类的时候背景图片有一个渐变效果
+	 		$(".preNext").css("opacity",0.2).hover(function() {
+                $(this).stop(true,false).animate({"opacity":"0.8"},500);
+            },function() {
+                $(this).stop(true,false).animate({"opacity":"0.2"},500);
+            });
+            
+            //设置向左的箭头，即图片减
+	        $("#main .pre").click(function() {
+	            index -= 1;
+	            if(index == -1) {index = len-1 ;}
+	            showPics(index);
+	        });
+	        
+	        //设置向右的箭头，即图片加
+	        $("#main .next").click(function() {
+	            index += 1;
+	            if(index == len) {index = 0;}
+	            showPics(index);
+	        });
+			
+			//当鼠标移入图片时，计数器清零，移开鼠标，计数器开始计数
+            $("#main").hover(function() {
+                clearInterval(picTimer);
+            },function() {
+                picTimer = setInterval(function() {
+                    showPics(index);
+                    index++;
+                    if(index == len+1) {index = 1;}
+                },5000); 
+            }).trigger("mouseleave");
+            
+            //设定ul宽度
+             $("#main ul").css("width",sWidth * (len));
+            
+            //显示图片，这里用的方法就是将ul的总长度算出来然后让一个位置显示图片，其他位置的图片隐藏，然后用一个动画效果将要显示的图片移动到这里
+            function showPics(index) {
+            	var nowLeft = -index*sWidth; 
+                $("#main ul").stop(true,false).animate({"left":nowLeft},800);
+            }
+        });
+	</script>
+</html>
