@@ -57,11 +57,32 @@
 				text-align: center;
 				float: none;
 			}
-			.picture li{
+			.s_z{
+				width: 6px;
+				padding: 0px;
+				background: url(img/s_z.jpg) no-repeat;
+			}
+			.s_c{
+				width: 240px;
+				background: url(img/s_c.jpg) repeat-x;
+			}
+			.s_r{
+				width: 78px;
+				background: url(img/s_r.jpg) no-repeat;
+			}
+			.maizi{
+				list-style: none;
+				margin: 0px auto;
+			}
+			.maizi li{
 				float: left;
 			}
-			.picture{
-				
+			.dianhua{
+				height: 59px;
+				line-height: 59px;
+				float: right;
+				color:darkred;
+				font-size: larger;
 			}
 			@media (max-width: 768px) {
 				
@@ -114,17 +135,31 @@
 				</ul>
 			</div>
 		</div>
-		<div class="maizi">
-			<div class="container-fluid">
+		<div class="wp">
+			<div class="container-fluid" style="padding: 0px;margin-top: 10px;">
 				<div class="row">
-					<div class="col-md-12">
-						<ul class="picture">
-							<li class="col-md-4"><img src="img/logo.jpg" class="img-responsive" /></li>
-							<li class="col-md-4 img-responsive" style="background: url(img/s_z.jpg) no-repeat;">
-								
+					<div class="col-lg-12">
+						<ul class="maizi">
+							<li><img src="img/logo.jpg" class="img-responsive" /></li>
+							<li class="sousuo" style="padding-top: 10px;">
+								<form action="index.html" method="get" >
+									<table cellpadding="0" cellspacing="0" border="0" style="height: 42px;">
+										<tr>
+											<td class="s_z"></td>
+											<td class="s_c ">
+											 <input type="text" name="text" id="s_c_txt"/>
+											</td>
+											<td class="s_r">
+												<button type="submit" name="submit"></button>
+											</td>
+										</tr>
+									</table>
+							   </form>
 							</li>
+							<li class="dianhua"><span>客服热线：400-000-000</span></li>
 						</ul>
 					</div>
+					
 					
 				</div>
 			</div>
