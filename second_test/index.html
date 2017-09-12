@@ -2,9 +2,134 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>第二阶段考核作业</title>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<style type="text/css">
+			*{ margin: 0;padding: 0 }
+			img{ border: none }
+			body{ font: 14px/24px 'Microsoft YaHei', '宋体’.'"Helvetica Neue", Helvetica, Arial, sans-serif'' }
+			.wp{width: 70.17%;height: 80px;margin: 0px auto;}
+			.top{
+				background-color: black;
+				width: 100%;
+				color: #d8d8d8;
+				margin: 0px;
+				height: 24px ; 
+				line-height: 24px;
+			}
+			.top a{
+				text-decoration: none;
+				color: white;
+			}
+			.top a:hover{
+    			color: red;
+			}
+			#wangye{
+				list-style: none;
+				float: left;
+    			line-height: 24px;
+    			text-decoration: none;
+			}
+			#wangye li {
+				float: left;
+			}
+			.header_768{
+				text-align: center;
+		    	width: 100%;
+		    	height: 24px;
+		    	align-items: center;
+		    	justify-content:center;
+		    	display: flex;
+			}
+			.riqi{
+				float:none;
+			    display:inline-block;
+			  	margin-left: auto;
+			  	margin-right: auto;
+			}
+			#hide_message{
+				width: 100%;
+				list-style: none;
+				background-color: #000000;
+				color: #EEEEEE;
+				text-align: center;
+				float: none;
+			}
+			.picture li{
+				float: left;
+			}
+			.picture{
+				
+			}
+			@media (max-width: 768px) {
+				
+				.wp {
+					display: none;
+				}
+			}
+			
+			@media (min-width: 768px) {
+				
+				.header_768 {
+					display: none;
+				}
+				
+				.ul_768{
+					display: none;
+				}
+			}
+
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$('#message_button').click(function(){
+					$('#hide_message').toggle('slow',);
+				})
+			})	
+		</script>
 	</head>
 	<body>
-		
+		<div class="top">
+			<div class="wp">
+				<div class="container-fluid" style="padding: 0px;">
+					<div class="col-md-12" style="font-size:medium ; margin: 0px auto;padding: 0px;">
+						<ul id="wangye">
+							<li><a href="#">收藏本页</a></li>
+							<li><a href="#">&nbsp;设为主页</a></li>
+						</ul>
+						<span style="float:right;text-align: right;">2015年5月1日&nbsp;多云16℃/30℃</span>	
+					</div>
+				</div>
+			</div>
+			<div class="header_768">
+				<span id='message_button' style="font-size: large;">。。。</span>
+				<span class="riqi">2015年5月1日&nbsp;多云16℃/30℃</span>
+			</div>
+			<div class="ul_768">
+				<ul id="hide_message">
+					<li><a href="#">收藏本页</a></li>
+					<li><a href="#">&nbsp;设为主页</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="maizi">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="picture">
+							<li class="col-md-4"><img src="img/logo.jpg" class="img-responsive" /></li>
+							<li class="col-md-4 img-responsive" style="background: url(img/s_z.jpg) no-repeat;">
+								
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+
 	</body>
 </html>
