@@ -2,15 +2,17 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>第二阶段考核作业</title>
-		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<style type="text/css">
 			*{ margin: 0;padding: 0 }
 			img{ border: none }
 			body{ font: 14px/24px 'Microsoft YaHei', '宋体’.'"Helvetica Neue", Helvetica, Arial, sans-serif'' }
 			.wp{width: 70.17%;height: 80px;margin: 0px auto;}
+			.wp2{width: 70.17%;height: 80px;margin: 0px auto;}
 			.top{
 				background-color: black;
 				width: 100%;
@@ -58,17 +60,29 @@
 				float: none;
 			}
 			.s_z{
-				width: 6px;
+				width: 2%;
 				padding: 0px;
 				background: url(img/s_z.jpg) no-repeat;
 			}
 			.s_c{
-				width: 240px;
+				width: 68%;
 				background: url(img/s_c.jpg) repeat-x;
 			}
+			.s_c input{
+				width: 80%;
+				height: 35px;
+				border: 0px;
+			}
 			.s_r{
-				width: 78px;
+				width: 30%;
 				background: url(img/s_r.jpg) no-repeat;
+			}
+			.s_r button{
+				width: 100%;
+			    height: 41px;
+			    background: none;
+			    border: 0px;
+			    cursor: pointer;
 			}
 			.maizi{
 				list-style: none;
@@ -77,20 +91,63 @@
 			.maizi li{
 				float: left;
 			}
-			.dianhua{
-				height: 59px;
-				line-height: 59px;
-				float: right;
-				color:darkred;
-				font-size: larger;
+			
+			.nav-list{
+				padding: 0px; 
+				font-size:16px ;
 			}
+			.nav-list a{
+				padding: 0px;
+			}
+			
+			.daohang{
+				width: 100%;
+				height: 39px;
+				background: url(img/nav_bg.jpg) repeat-x;
+			}
+			
+			.daohang li{
+			    list-style: none;
+			    float: left;
+			    line-height: 39px;
+			    padding:  0px 2%;
+			}
+			
+			.daohang li.a , .daohang li:hover{
+			    background: url(img/nav_hover.jpg) repeat-x;
+			}
+			
+			.daohang a{
+			    color: #fff;
+			    font-size:16px;
+			    text-decoration: none;
+			}
+						
 			@media (max-width: 768px) {
 				
 				.wp {
 					display: none;
 				}
+				
+				.daohang{
+					display: none;
+				}
 			}
-			
+			@media (max-width: 960px) {
+				.wp2{
+					display: none;
+				}
+			}
+			@media (max-width: 1070px) {
+				.daohang a{
+					font-size:13px ;
+				}
+			}
+			@media (max-width: 872px) {
+				.daohang a{
+					font-size:12px ;
+				}
+			}
 			@media (min-width: 768px) {
 				
 				.header_768 {
@@ -107,6 +164,9 @@
 			$(function(){
 				$('#message_button').click(function(){
 					$('#hide_message').toggle('slow',);
+				})
+				$('#sousuo_button').click(function(){
+					$('#serach').toggle('slow',);
 				})
 			})	
 		</script>
@@ -125,46 +185,106 @@
 				</div>
 			</div>
 			<div class="header_768">
-				<span id='message_button' style="font-size: large;">。。。</span>
+				<span id='message_button' style="font-size: large; cursor: pointer;">。。。</span>
 				<span class="riqi">2015年5月1日&nbsp;多云16℃/30℃</span>
 			</div>
 			<div class="ul_768">
 				<ul id="hide_message">
 					<li><a href="#">收藏本页</a></li>
-					<li><a href="#">&nbsp;设为主页</a></li>
+					<li><a href="#">设为主页</a></li>
+					<li><a href="#">网站首页</a></li>
+					<li><a href="#">公司简介</a></li>
+					<li><a href="#">业务描述</a></li>
+					<li><a href="#">服务范围</a></li>
+					<li><a href="#">产品中心</a></li>
+					<li><a href="#">人才管理</a></li>
+					<li><a href="#">在线留言</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li id="sousuo_button"><a href="#">搜索</a></li>
+					<li id="serach"><input type="text" name="serach" value="" /><button type="submit" name="submit" style="color: #000000;">
+						搜索
+					</button></li>
 				</ul>
 			</div>
 		</div>
-		<div class="wp">
+		<div class="wp2">
 			<div class="container-fluid" style="padding: 0px;margin-top: 10px;">
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-md-10">
 						<ul class="maizi">
-							<li><img src="img/logo.jpg" class="img-responsive" /></li>
-							<li class="sousuo" style="padding-top: 10px;">
+							<li style="width: 30%; padding-right: 2.5%;"><img src="img/logo.jpg" class="img-responsive" /></li>
+							<li style="width: 30%; padding-top: 10px; padding-right: 2.5%;">
 								<form action="index.html" method="get" >
-									<table cellpadding="0" cellspacing="0" border="0" style="height: 42px;">
+									<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 42px;">
 										<tr>
-											<td class="s_z"></td>
-											<td class="s_c ">
-											 <input type="text" name="text" id="s_c_txt"/>
+											<td class="form-group" style="height: 80%;">
+												<input style="margin-bottom: 3px;" no-repeat;" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
 											</td>
-											<td class="s_r">
-												<button type="submit" name="submit"></button>
+											<td class="form-group">
+												<button type="submit" name="submit" style="border: 0px; height: 80%;" >
+													<img src="img/s_r.jpg" class="img-responsive" />
+												</button>
 											</td>
 										</tr>
 									</table>
 							   </form>
 							</li>
-							<li class="dianhua"><span>客服热线：400-000-000</span></li>
+							<li style="width: 30%;"><img src="img/dianhua.jpg" class="img-responsive" style="padding-top: 15px;"/></li>
 						</ul>
 					</div>
-					
-					
+				</div>	
+			</div>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12" style="padding: 0px;">
+					<div class="daohang">
+						<div class="wp">
+							<ul>
+				                <li class="a">
+				                    <a href="index.html">网站首页</a>
+				                </li>
+				                <li>
+				                    <a href="index.html">公司简介</a>
+				                </li>
+				                <li>
+				                    <a href="index.html">业务描述</a>
+				                </li>
+				                <li>
+				                    <a href="index.html">服务范围</a>
+				                </li>
+				                <li>
+				                    <a href="index.html">产品中心</a>
+				                </li>
+				                <li>
+				                    <a href="index.html">人才管理</a>
+				                </li>
+				                <li>
+				                    <a href="index.html">在线留言</a>
+				                </li>
+				                <li>
+				                    <a href="index.html">联系我们</a>
+				                </li>
+			            	</ul>
+						</div>
+					</div>
 				</div>
 			</div>
-			
 		</div>
-
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div style="width: 70.17%;margin: 0px auto;">
+						<img src="img/ad.jpg" class="img-responsive"/>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+		
+		
+		
 	</body>
 </html>
