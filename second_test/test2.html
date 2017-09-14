@@ -40,32 +40,28 @@
 		</style>
 	</head>
 	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-             <li><a href="#contact">Contact</a></li>
-              <li><a href="#contact">Contact</a></li>
-               <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                 <li><a href="#contact">Contact</a></li>
-                  <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<div class="row">
+  <div class="col-md-12">
+  	<ul style="list-style: none;">
+	  	<li class="col-xs-4" style="padding-right: 2%;float: left;"><img src="img/gg.png" class="img-responsive"/></li>
+	  	<li class="col-xs-4" style="padding-right: 2%;float: left;"><img src="img/ie.png" class="img-responsive"/></li>
+	  	<li class="col-xs-4" style="padding-right: 2%;float: left;"><img src="img/ff.png" class="img-responsive"/></li>
+  	</ul>
+  </div>
+</div>
 
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<div class="row">
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+
+<!-- Columns are always 50% wide, on mobile and desktop -->
+<div class="row">
+  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
+</div>
 	</body>
 </html>
