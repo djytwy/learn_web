@@ -11,10 +11,12 @@
 			*{ margin: 0;padding: 0 }
 			img{ border: none }
 			body{ font: 14px/24px 'Microsoft YaHei', '宋体’.'"Helvetica Neue", Helvetica, Arial, sans-serif'' }
-			.wp{width: 70.17%;height: 100%;margin: 0px auto;}
-			.wp2{width: 70.17%;height: 80px;margin: 0px auto;}
-			.wp_center{width: 70.17%;height: 80px;margin: 0px auto;}
-			.wp_foot{width: 72.4%;height: 80px;margin: 0px auto;}
+			.wp{width: 71.16%;height: 100%;margin: 0px auto;}
+			.wp_960{width: 71.16%;height: 80px;margin: 0px auto;}
+			.wp_height_auto{width: 71.16%;height: auto;margin: 0px auto;}
+			.wp_foot{width: 71.16%;height: 80px;margin: 0px auto;}
+			.no_padding{padding: 0px;margin: 0px auto;}
+			.no_padding_left{padding-left: 0px;margin: 0px auto;}
 			.top{
 				background-color: black;width: 100%;
 				color: #d8d8d8;margin: 0px;
@@ -33,29 +35,29 @@
 				text-decoration: none; color: white;
 			}
 			.top a:hover{
-    			color: red;
+				color: red;
 			}
 			
 			#message_button{
 				font-size: large; cursor: pointer;
 			}
 			
-			#wangye{
+			#web{
 				list-style: none;
 				float: left;
-    			line-height: 24px;
-    			text-decoration: none;
+				line-height: 24px;
+				text-decoration: none;
 			}
-			#wangye li {
+			#web li {
 				float: left;
 			}
 			.header_768{
 				text-align: center;
-		    	width: 100%;
-		    	height: 24px;
-		    	align-items: center;
-		    	justify-content:center;
-		    	display: flex;
+				width: 100%;
+				height: 24px;
+				align-items: center;
+				justify-content:center;
+				display: flex;
 			}
 			.date{
 				float:none;
@@ -89,6 +91,12 @@
 			    border: 0px;
 			    cursor: pointer;
 			}
+			
+			.dianhua{
+				padding-top: 15px; 
+				padding-left: 10%;
+			}
+			
 			.maizi{
 				list-style: none;
 				margin: 0px auto;
@@ -97,9 +105,32 @@
 				float: left;
 			}
 			
+			.logo{
+				padding-right: 2.5%;
+			}
+			
+			.search_unhide{
+				padding-top: 10px; 
+				padding-right: 2.5%;
+			}
+			
+			.search_table{
+				width: 100%; 
+				height: 42px;
+			}
+			
+			.search_button{
+				border: 0px;
+				padding: 0px;
+			}
+			
+			.search_input{
+				margin-bottom: 5px;
+			}
+			
 			.daohang{
 				width: 100%;
-				height: 38px;
+				height: auto;
 				background: url(img/nav_bg.jpg) repeat-x;
 			}
 			
@@ -159,6 +190,32 @@
 				float: right;
 				margin-top: 10px;
 			}
+			
+			.hangye_xinwen{
+				color: #616161; 
+				padding-bottom: 15px;
+			}
+			
+			.hangye_xinwen a{
+				text-decoration: none;
+				color: #888888;
+			}
+			
+			.hangye_xinwen img{
+				float: left; padding-right:10px 
+			}
+			
+			.hangye_xinwen h3{
+				font-weight: normal;
+				font-size: 14px;
+				margin: 5px 0px 5px 0px;
+			}
+			
+			.hangye_xinwen p{
+				font-size: 10px; 
+				text-indent: 24px;
+			}
+			
 			.hangye li{
 			    list-style: none;
 			    height: 24px;
@@ -248,6 +305,7 @@
 			    width: 100%;
 			    background: url(img/footer_bg.jpg) repeat-x;
 			    margin: 0px auto;
+			    margin-top: 20px;
 			}
 			.foot_top{
 			    width: 100%;
@@ -284,16 +342,14 @@
 				.daohang{
 					display: none;
 				}
-				.show_768{
-					display: none;
-				}
+				
 				.wp_foot{
 					width: 100%;
 				}
 			}
 			@media (max-width: 960px) {
 				
-				.wp2{
+				.wp_960{
 					display: none;
 				}
 			}
@@ -324,8 +380,10 @@
 					display: none;
 				}
 			}
-
 		</style>
+
+
+		
 		<script type="text/javascript">
 			$(function(){
 				$('#message_button').click(function(){
@@ -342,7 +400,7 @@
 			<div class="wp">
 				<div class="container-fluid top_header">
 					<div class="col-md-12 top_font">
-						<ul id="wangye">
+						<ul id="web">
 							<li><a href="#">收藏本页</a></li>
 							<li><a href="#">&nbsp;设为主页</a></li>
 						</ul>
@@ -350,210 +408,113 @@
 					</div>
 				</div>
 			</div>
+			
 			<div class="header_768">
 				<span id='message_button'>。。。</span>
 				<span class="date">2015年5月1日&nbsp;多云16℃/30℃</span>
 			</div>
-			<div class="ul_768">
-				<ul id="hide_message">
-					<li><a href="#">收藏本页</a></li>
-					<li><a href="#">设为主页</a></li>
-					<li><a href="#">网站首页</a></li>
-					<li><a href="#">公司简介</a></li>
-					<li><a href="#">业务描述</a></li>
-					<li><a href="#">服务范围</a></li>
-					<li><a href="#">产品中心</a></li>
-					<li><a href="#">人才管理</a></li>
-					<li><a href="#">在线留言</a></li>
-					<li><a href="#">联系我们</a></li>
-					<li><a data-toggle = "collapse" data-target="#serach">搜索</a></li>
-					<li id="serach">
-						<form action="index.html" method="get" >
-							<table cellpadding="0" cellspacing="0" border="0" class="search">
-								<tr>
-									<td><input type="text" name="serach" value=""/></td>
-									<td>
-										<button type="submit" name="submit">搜索</button>
-									</td>
-								</tr>
-							</table>
-						</form>
-					</li>
-				</ul>
-				<div class="container-fluid" style="margin-top: 0px; padding-top: 0px;">
-					<div class="col-md-12">
-						<div style="width: 72%;margin: 0px auto;">
-							<img src="img/ad.jpg" class="img-responsive"/>
-						</div>
-					</div>
-				</div>
-				<div class="container-fluid">
-					<div class="row wp_center" style="margin: 0px auto; width: 72%;">
-						<div class="col-md-7" style="padding-left:0px ;">
-							<div class="jianjie" >
-								<div class="xian">
-									<span>
-										<a href="">more</a>
-									</span>
-								</div>
-								<div>
-									<img src="img/jianjie_img.jpg"  alt="maiziedu"/>
-									<p>
-					            	    麦子学院是成都麦子信息技术有限公司旗下一个IT在线教育平台，目前已有30万注册用户，10万以上APP下载量，5000小时视频内容。 我们从不说空话，专注于IT在线教育，脱离传统教育的束缚，让你走哪学哪，想学就学。逗比的老师，贴心的助教，在这儿你能感受到来自五 湖四海伙伴们热情和踏实的学习态度！
-					                </p>
-					                <p>
-					            	             什么都不会没关系，想跳槽想加薪都可以，提升自己更不在话下。 只要你愿意，绝对为你找到一份相当靠谱的工作！成就你，我能行！
-					                </p>
-					                <p>
-					            	            那么多的梦想，你不想实现？买的起大奔的人会天天挤公交吗？ 想成为成功人士，脑袋里必须要有知识。一切不以要付出为目的的梦想都是耍流氓！ LPS系统、每周直播课、学习作业快速批改、保就业、班主任助教全程跟踪。 你看，离你完成梦想的道路是不是近了很多。
-					                </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-5" style="padding-left: 0px; padding-right: 0px;">
-							<div class="hangye">
-								<div class="xian">
-									<span>
-										<a href="">more</a>
-									</span>
-								</div>
-								<div class="a" style="color: #616161;padding-bottom: 5px;">
-					                <a href="" style="text-decoration: none;">
-					                    <img src="img/list_img.jpg" alt="" style="float: left; padding-right:10px "/>
-					                    <h3 style="font-weight: normal;font-size: 14px;margin: 5px 0px 5px 0px;color: #888888;">Web前端开发之HTML+CSS基础入门</h3>
-					                    <p style="font-size: 10px; color: #888888; text-indent: 24px;">麦子学院朱朝兵老师带领大家从HTML语法，基本结构到CSS入门DIV+Css布局,通俗易懂  ... ...</p>
-					                </a>
-					            </div>
-								<div class="hyxw">
-									<ul>
-					                    
-					                    <li>
-					                        <a href=""> 
-					                            <h3>Web前端开发之HTML+CSS基础入门</h3>
-					                            <span>2015-05-15</span>
-					                        </a>
-					                    </li>
-					                    <li>
-					                        <a href="">
-					                            <h3>Web前端开发之HTML+CSS基础入门</h3>
-					                            <span>2015-05-15</span>
-					                        </a>
-					                    </li>
-					                    <li>
-					                        <a href="">
-					                            <h3>Web前端开发之HTML+CSS基础入门</h3>
-					                            <span>2015-05-15</span>
-					                        </a>
-					                    </li>
-					                    <li>
-					                        <a href="">
-					                            <h3>Web前端开发之HTML+CSS基础入门</h3>
-					                            <span>2015-05-15</span>
-					                        </a>
-					                    </li>
-					                    <li>
-					                        <a href="">
-					                            <h3>Web前端开发之HTML+CSS基础入门</h3>
-					                            <span>2015-05-15</span>
-					                        </a>
-					                    </li>
-					                    <li>
-					                        <a href="">
-					                            <h3>Web前端开发之HTML+CSS基础入门</h3>
-					                            <span>2015-05-15</span>
-					                        </a>
-					                    </li>
-					                    <li>
-					                        <a href="">
-					                            <h3>Web前端开发之HTML+CSS基础入门</h3>
-					                            <span>2015-05-15</span>
-					                        </a>
-					                    </li>
-					                </ul>
-					            </div>
-							</div>
-						</div>	
-					</div>
-				</div>
-			</div>
 		</div>
 		
-		<div class="wp2">
+		<div class="ul_768" id="hide_message">
+			<ul>
+				<li><a href="#">收藏本页</a></li>
+				<li><a href="#">设为主页</a></li>
+				<li><a href="#">网站首页</a></li>
+				<li><a href="#">公司简介</a></li>
+				<li><a href="#">业务描述</a></li>
+				<li><a href="#">服务范围</a></li>
+				<li><a href="#">产品中心</a></li>
+				<li><a href="#">人才管理</a></li>
+				<li><a href="#">在线留言</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a data-toggle = "collapse" data-target="#serach">搜索</a></li>
+				<li id="serach">
+					<form action="index.html" method="get" >
+						<table cellpadding="0" cellspacing="0" border="0" class="search">
+							<tr>
+								<td><input type="text" name="serach" value=""/></td>
+								<td>
+									<button type="submit" name="submit">搜索</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="wp_960">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-10">
+					<div class="col-xs-12 no_padding">
 						<ul class="maizi">
-							<li style="width: 30%; padding-right: 2.5%;"><img src="img/logo.jpg" class="img-responsive" /></li>
-							<li style="width: 30%; padding-top: 10px; padding-right: 2.5%;">
+							<li class="col-xs-4 logo" ><img src="img/logo.jpg" class="img-responsive" /></li>
+							<li class="col-xs-4 search_unhide">
 								<form action="index.html" method="get" >
-									<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 42px;">
+									<table cellpadding="0" cellspacing="0" border="0" class="search_table">
 										<tr>
-											<td class="form-group" style="height: 80%;">
-												<input style="margin-bottom: 3px;" no-repeat;" type="sousuo" class="form-control" placeholder="输入搜索的内容">
+											<td class="form-group">
+												<input no-repeat;" type="sousuo" class="form-control search_input" placeholder="输入搜索的内容">
 											</td>
 											<td class="form-group">
-												<button type="submit" name="submit" style="border: 0px; height: 80%;" >
+												<button type="submit" name="submit" class="search_button">
 													<img src="img/s_r.jpg" class="img-responsive" />
 												</button>
 											</td>
 										</tr>
 									</table>
-							   </form>
+							   	</form>
 							</li>
-							<li style="width: 30%;"><img src="img/dianhua.jpg" class="img-responsive" style="padding-top: 15px;"/></li>
+							<li class="col-xs-4"><img src="img/dianhua.jpg" class="img-responsive dianhua" /></li>
 						</ul>
 					</div>
 				</div>	
 			</div>
 		</div>
 		
-		<div class="container-fluid">
-			<div class="row" style="margin-top: 0px;padding-top: 0px;">
-				<div class="col-xs-12" style="padding: 0px;">
-					<div class="daohang">
-						<div class="wp">
-							<ul>
-				                <li class="a">
-				                    <a href="index.html">网站首页</a>
-				                </li>
-				                <li>
-				                    <a href="index.html">公司简介</a>
-				                </li>
-				                <li>
-				                    <a href="index.html">业务描述</a>
-				                </li>
-				                <li>
-				                    <a href="index.html">服务范围</a>
-				                </li>
-				                <li>
-				                    <a href="index.html">产品中心</a>
-				                </li>
-				                <li>
-				                    <a href="index.html">人才管理</a>
-				                </li>
-				                <li>
-				                    <a href="index.html">在线留言</a>
-				                </li>
-				                <li>
-				                    <a href="index.html">联系我们</a>
-				                </li>
-			            	</ul>
-						</div>
-					</div>
-				</div>
+		
+		<div class="col-xs-12 daohang no_padding">
+			<div class="wp">
+				<ul style="margin: 0px;"> 
+	                <li class="a">
+	                    <a href="index.html">网站首页</a>
+	                </li>
+	                <li>
+	                    <a href="index.html">公司简介</a>
+	                </li>
+	                <li>
+	                    <a href="index.html">业务描述</a>
+	                </li>
+	                <li>
+	                    <a href="index.html">服务范围</a>
+	                </li>
+	                <li>
+	                    <a href="index.html">产品中心</a>
+	                </li>
+	                <li>
+	                    <a href="index.html">人才管理</a>
+	                </li>
+	                <li>
+	                    <a href="index.html">在线留言</a>
+	                </li>
+	                <li>
+	                    <a href="index.html">联系我们</a>
+	                </li>
+            	</ul>
 			</div>
 		</div>
-		<div class="container-fluid show_768" style="margin-top: 0px; padding-top: 0px;">
-			<div class="col-md-12">
-				<div style="width: 73.4%;margin: 0px auto;">
+		
+		<div class="wp_height_auto">
+			<div class="col-md-12 no_padding">
+				<div class="no_padding">
 					<img src="img/ad.jpg" class="img-responsive"/>
 				</div>
 			</div>
 		</div>
 		
-		<div class="container-fluid">
-			<div class="row wp" style="margin: 0px auto; width: 72%;">
-				<div class="col-md-7" style="padding-left:0px ;">
+		<div class="container-fluid no_padding" >
+			<div class="row wp_height_auto">
+				<div class="col-md-7 no_padding_left">
 					<div class="jianjie" >
 						<div class="xian">
 							<span>
@@ -574,18 +535,19 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-5" style="padding-left: 0px; padding-right: 0px;">
+				
+				<div class="col-md-5 no_padding">
 					<div class="hangye">
 						<div class="xian">
 							<span>
 								<a href="">more</a>
 							</span>
 						</div>
-						<div class="a" style="color: #616161;padding-bottom: 5px;">
-			                <a href="" style="text-decoration: none;">
-			                    <img src="img/list_img.jpg" alt="" style="float: left; padding-right:10px "/>
-			                    <h3 style="font-weight: normal;font-size: 14px;margin: 5px 0px 5px 0px;color: #888888;">Web前端开发之HTML+CSS基础入门</h3>
-			                    <p style="font-size: 10px; color: #888888; text-indent: 24px;">麦子学院朱朝兵老师带领大家从HTML语法，基本结构到CSS入门DIV+Css布局,通俗易懂  ... ...</p>
+						<div class="hangye_xinwen">
+			                <a href="">
+			                    <img src="img/list_img.jpg" alt="" />
+			                    <h3>Web前端开发之HTML+CSS基础入门</h3>
+			                    <p>麦子学院朱朝兵老师带领大家从HTML语法，基本结构到CSS入门DIV+Css布局,通俗易懂  ... ...</p>
 			                </a>
 			            </div>
 						<div class="hyxw">
@@ -638,38 +600,32 @@
 				</div>	
 			</div>
 			
-			<div class="container-fluid">
-				<div class="row" style="width: 75%;margin: 0px auto;">
-					<div class="col-md-12 chanpin" style="padding-left: 0px;padding-right: 0px;">
-						<div class="cptj">
-							<div class="xian">
-								<span>
-									<a href="">more</a>
-								</span>
-							</div>
-						</div>
-						 <ul>
-				            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li class="mr_0"><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				            <li class="mr_0"><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
-				        </ul>
+			<div class="col-xs-12 chanpin no_padding">
+				<div class="row wp_height_auto">
+					<div class="cptj">
+						<div class="xian"></div>
 					</div>
+					<ul>
+			            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li class="mr_0"><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			            <li class="mr_0"><a href=""><img src="img/chanpin_img.jpg" alt=""/><span>Web前端开发之HTML+CSS基础入门</span></a></li>
+			       </ul>
 				</div>	
 			</div>
 		</div>
 		
-		<div class="foot" style="margin-top: 20px;">
-			<div class="container-fluid" style="padding: 0px;">
-				<div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
+		<div class="foot">
+			<div class="container-fluid no_padding">
+				<div class="col-md-12 no_padding">
 					<div class="wp_foot">
 						<div class="foot_top">
 							<a href="">关于我们</a>

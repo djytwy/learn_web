@@ -1,0 +1,372 @@
+*{ margin: 0;padding: 0 }
+img{ border: none }
+body{ font: 14px/24px 'Microsoft YaHei', '宋体’.'"Helvetica Neue", Helvetica, Arial, sans-serif'' }
+.wp{width: 71.16%;height: 100%;margin: 0px auto;}
+.wp_960{width: 71.16%;height: 80px;margin: 0px auto;}
+.wp_height_auto{width: 71.16%;height: auto;margin: 0px auto;}
+.wp_foot{width: 71.16%;height: 80px;margin: 0px auto;}
+.no_padding{padding: 0px;margin: 0px auto;}
+.no_padding_left{padding-left: 0px;margin: 0px auto;}
+.top{
+	background-color: black;width: 100%;
+	color: #d8d8d8;margin: 0px;
+	height: 24px ; line-height: 24px;
+}
+.top_header{
+	padding: 0px; height: 24px;
+}
+.top_font{
+	font-size:medium ;padding: 0px;
+}
+.top_font span{
+	float:right;text-align: right;
+} 
+.top_header a{
+	text-decoration: none; color: white;
+}
+.top a:hover{
+	color: red;
+}
+
+#message_button{
+	font-size: large; cursor: pointer;
+}
+
+#web{
+	list-style: none;
+	float: left;
+	line-height: 24px;
+	text-decoration: none;
+}
+#web li {
+	float: left;
+}
+.header_768{
+	text-align: center;
+	width: 100%;
+	height: 24px;
+	align-items: center;
+	justify-content:center;
+	display: flex;
+}
+.date{
+	float:none;
+    display:inline-block;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+#hide_message{
+	width: 100%;
+	list-style: none;
+	background-color: #000000;
+	color: #EEEEEE;
+	text-align: center;
+	float: none;
+	margin-bottom: 0px;
+}
+
+.search{
+	margin: 0px auto;
+	color: #000000;
+}
+
+.s_r{
+	width: 30%;
+	background: url(img/s_r.jpg) no-repeat;
+}
+.s_r button{
+	width: 100%;
+    height: 41px;
+    background: none;
+    border: 0px;
+    cursor: pointer;
+}
+
+.dianhua{
+	padding-top: 15px; 
+	padding-left: 10%;
+}
+
+.maizi{
+	list-style: none;
+	margin: 0px auto;
+}
+.maizi li{
+	float: left;
+}
+
+.logo{
+	padding-right: 2.5%;
+}
+
+.search_unhide{
+	padding-top: 10px; 
+	padding-right: 2.5%;
+}
+
+.search_table{
+	width: 100%; 
+	height: 42px;
+}
+
+.search_button{
+	border: 0px;
+}
+
+.search_input{
+	margin-bottom: 5px;
+}
+
+.daohang{
+	width: 100%;
+	height: auto;
+	background: url(img/nav_bg.jpg) repeat-x;
+}
+
+.daohang li{
+    list-style: none;
+    float: left;
+    line-height: 38px;
+    padding:  0px 2%;
+}
+
+.daohang li.a , .daohang li:hover{
+    background: url(img/nav_hover.jpg) repeat-x;
+}
+
+.daohang a{
+    color: #fff;
+    font-size:16px;
+    text-decoration: none;
+}
+
+.jianjie{
+	width: 100%;
+    height: auto;
+    background: url(img/jianjie.jpg) no-repeat;
+    float: left;
+    margin-top: 10px;
+}
+.xian{
+    padding-bottom: 8px;
+    border-bottom: 1px solid darkred;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+.xian span {
+ 	position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.xian a {
+    color: darkred;
+    text-decoration: none;
+}
+.jianjie img{
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.jianjie p{
+	color: #616161;
+    text-indent: 24px;
+}
+
+.hangye{
+	width: 100%;
+	height: auto;
+	background: url(img/xinwen.jpg) no-repeat;
+	float: right;
+	margin-top: 10px;
+}
+
+.hangye_xinwen{
+	color: #616161; 
+	padding-bottom: 15px;
+}
+
+.hangye_xinwen a{
+	text-decoration: none;
+	color: #888888;
+}
+
+.hangye_xinwen img{
+	float: left; padding-right:10px 
+}
+
+.hangye_xinwen h3{
+	font-weight: normal;
+	font-size: 14px;
+	margin: 5px 0px 5px 0px;
+}
+
+.hangye_xinwen p{
+	font-size: 10px; 
+	text-indent: 24px;
+}
+
+.hangye li{
+    list-style: none;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 6px;
+    background: url(img/list_bg.jpg) no-repeat center left;
+}
+.hyxw li.a{
+    background: none;
+    padding: 0;
+    height: 76px;
+}
+.hyxw li img{
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.hyxw span{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+    font-size: 10px;
+    color: #888888;
+}
+.hyxw h3{
+    font-weight: normal;
+    font-size: 14px;
+    margin: 5px 0px 5px 0px;
+}
+.hyxw a{
+    color: #616161;
+    text-decoration: none;
+
+}
+.hyxw p{
+    font-size: 12px;
+    color: #888;
+    text-indent: 24px;
+}
+
+.chanpin{
+	width: 100%;
+	
+	margin: 0px auto;
+}
+.cptj{
+	width: 100%;
+    height: 96px;
+    background: url(img/chanpin.jpg) no-repeat;
+    float: left;
+    margin-top: 10px;
+}
+.chanpin li{
+    float: left;
+    list-style: none;
+    margin: 0 10px 10px 0;
+    
+    overflow: hidden;
+    position: relative;
+}
+.chanpin span{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+    height: 20px;
+    width: 100%;
+    padding: 0 10px;
+    color: #fff;
+    background: darkred;
+    overflow: hidden;
+}
+.chanpin li a:hover span{
+    display: block;
+}
+.chanpin li img{
+    float: left;
+}
+.chanpin li.mr_0{
+    margin-right: 0;
+}
+
+.foot{
+	height: 103px;
+    width: 100%;
+    background: url(img/footer_bg.jpg) repeat-x;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+.foot_top{
+    width: 100%;
+    line-height: 80px;
+    color: #fff;
+  	float: left;
+  	font-size: 16px;
+}
+.foot_top a{
+	text-decoration: none;
+	color: white;
+}
+.foot_top span{
+	float: right;
+}
+.foot_bottom{
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	color: #f60;
+}
+.foot_bottom a{
+	text-decoration: none;
+	color: #888;
+	margin-right: 10px;
+}
+			
+@media (max-width: 768px) {
+	
+	.wp{
+		display: none;
+	}
+	
+	.daohang{
+		display: none;
+	}
+	
+	.wp_foot{
+		width: 100%;
+	}
+}
+@media (max-width: 960px) {
+	
+	.wp_960{
+		display: none;
+	}
+}
+@media (max-width: 1089px) {
+	.daohang a{
+		font-size:13px ;
+	}
+	.wp_foot a,.wp_foot span{
+		font-size: 10px;
+	}
+}
+@media (max-width: 872px) {
+	
+	.daohang a{
+		font-size:12px ;
+	}
+	.daohang li{
+		padding: 0px 1.2% 0px 1.2%;
+	}
+}
+@media (min-width: 768px) {
+	
+	.header_768 {
+		display: none;
+	}
+	
+	.ul_768{
+		display: none;
+	}
+}
+
