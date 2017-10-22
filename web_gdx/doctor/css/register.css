@@ -1,0 +1,93 @@
+.center{
+	align-items: center;
+	text-align: center;
+	background: #FFFFFF;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.title{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: solid 2px #ADADAD;
+}
+.title span{
+	font-size: 24px;
+	color: orangered;
+	float: left;
+}
+.title a{
+	font-size: 24px;
+	float: right;
+	color: #234DC8;
+}
+.details_states{
+	width: 40%;
+	padding-right: 0px;
+}
+.message{
+	margin-bottom: 40px;
+}
+.message ul{
+	list-style: none;
+}
+.message ul li{
+	float: none;
+	height: 66px;
+	line-height: 66px;
+	transform: translateY(50%);
+}
+.message li label{
+	width: 10%;
+	padding-right: 10px;
+}
+.message li input{
+	height:40px;
+	width: 40%;
+}
+select{
+	padding-right: 10px;
+	height: 40px;
+	width: 13.2%;
+}
+button{
+	width: 40%;
+	height: 40px;
+	line-height: 40px;
+	background: #234dc8;
+	border: solid 1px #234dc8;
+	border-radius: 20px;
+	padding: 5px;
+	text-align: center;
+	color:#fff;
+	font-size: 18px;
+	margin-top: 40px;
+	margin-left: 10%;
+}
+.confirm_img{
+	background-image: url(../img/confirm/bottom_bg.png); 
+	background-repeat: no-repeat;
+	background-position-x: 100%;
+	background-position-y: center;
+}
+button:hover{
+	background: #23527C;
+}
+.icon #log{
+	height: 100%;
+	border-bottom: solid 2px #018CEF;
+}
+@media (max-width: 1200px) {
+	
+	.details_states{
+		width: 80%;
+		padding-right:0% ;	
+	}	
+	
+}
+@media (min-width: 1200px){
+	.details_states{
+		width: 80%;
+		padding-right:0%;	
+	}
+}

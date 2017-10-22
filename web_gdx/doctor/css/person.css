@@ -1,0 +1,247 @@
+.person_center{
+	padding: 20px 20px 40px 20px;
+	background-color: white;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.person_title{
+	width: 100%;
+	border-bottom: solid 2px #ADADAD;
+	color: #FF4500;
+	font-size: 18px;
+	font-weight: 600;
+	float: left;
+	padding-bottom: 10px;
+	height: 38px;
+}
+
+.title1{
+	width: 100%;
+	height: 40px;
+	padding-bottom: 10px;
+}
+.basic_title{
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.basic_message{
+	border: solid 1px #ADADAD;
+	width: 100%;
+	margin-bottom: 35px;
+}
+
+.basic_message ul li{
+	float: left;
+	height: 30px;
+	width: 100%;
+	padding-left:10px;
+}
+
+.basic_message ul {
+	list-style: none;
+}
+
+.massage_table{
+	padding: 20px 0px;
+	height: 148px;
+}
+
+.message{
+	width: 9.5%;
+	float: left;
+	text-align: left;
+	padding: 5px 5px 5px 0px;
+	color: #999;
+	font-size: 16px;
+}
+
+.message1{
+	width: 90.5%;
+	float: left;
+	text-align: left;
+	padding: 5px;
+	font-size: 16px;
+}
+
+.post_addr{
+	padding: 10px 0px;
+}
+
+.post_title{
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 10px;
+}
+
+.post_title span{
+	float: left;
+	font-size: 18px;
+	font-weight: 600;	
+}
+
+.post_title a{
+	font-size: 16px;
+	float: right;
+	color: #234DC8;
+}
+
+.post_message{
+	padding: 15px;
+	margin-bottom: 40px;
+	border: solid 1px #ADADAD;
+}
+
+.post_message_title{
+	font-size: 18px;
+	height: auto;
+	line-height: 50px;
+	padding: 10px;
+	font-weight: 600;
+}
+
+.post_message_title span{
+	padding-right: 60px;
+}
+
+.post_message_title label{
+	background: #EC971F;
+	width: 80px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+/*.post_message_title a{
+	float: right;
+}*/
+
+.post_content{
+	padding: 0px 10px;
+	width: 100%;
+}
+
+/*.message2{
+	width: 9.5%;
+	float: left;
+	text-align: left;
+	padding: 5px 5px 5px 0px;
+	color: #ADADAD;
+	font-size: 16px;
+}
+
+.message3{
+	width: 90.5%;
+	float: left;
+	text-align: left;
+	padding: 5px;
+	font-size: 16px;
+	color: #999;
+}*/
+
+.post_content ul{
+	list-style: none;
+}
+
+.post_content ul li{
+	float: left;
+	width: 100%;
+}
+.btn_web{
+	line-height: 30px;
+	padding: 0px;
+}
+
+
+
+@media (max-width: 1200px) {
+	
+	.message{
+		width: 13%;
+		float: left;
+		text-align: left;
+		padding: 5px 5px 5px 0px;
+		color: #ADADAD;
+		font-size: 16px;
+	}
+	.message1{
+		width: 87%;
+		float: left;
+		text-align: left;
+		padding: 5px;
+		font-size: 16px;
+		color: #333;
+	}
+	.message2{
+		width: 13%;
+		float: left;
+		text-align: left;
+		padding: 5px 5px 5px 0px;
+		color: #ADADAD;
+		font-size: 16px;
+	}
+	.message3{
+		width: 87%;
+		float: left;
+		text-align: left;
+		padding: 5px;
+		font-size: 16px;
+		color: #333;
+	}
+	.message4{
+		width: 82%;
+	}
+	.message4_2{
+		width: 93.5%;
+	}
+	
+	
+}
+
+@media (min-width: 1200px ) {
+	
+	.message{
+		width: 11%;
+		float: left;
+		text-align: left;
+		padding: 5px 5px 5px 0px;
+		color: #ADADAD;
+		font-size: 16px;
+	}
+	.message1{
+		width: 89%;
+		float: left;
+		text-align: left;
+		padding: 5px;
+		font-size: 16px;
+		color: #333;
+	}
+	.message2{
+		width: 11%;
+		float: left;
+		text-align: left;
+		padding: 5px 5px 5px 0px;
+		color: #ADADAD;
+		font-size: 16px;
+	}
+	.message3{
+		width: 89%;
+		float: left;
+		text-align: left;
+		padding: 5px;
+		font-size: 16px;
+		color: #333;
+	}
+	.message4{
+		width: 85.5%;
+	}
+	
+	.message4_2{
+		width: 94.5%;
+	}
+	
+}

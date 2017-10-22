@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>确认收货</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/transfrom.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--<div class="container-fluid title_bg" >
+			<div class="container">
+				<div class="row h_title">
+					<ul class="l_title">
+						<li class="col-lg-1 fl"><a href="#"><img src="img/confirm/index_logo.png" class="img-responsive"/></a></li>
+						<li class="col-sm-1 active_title"><a href="#" class="tn">首页</a></li>
+						<li class="col-lg-1 fl" ><a href="#" class="nactive_title tn">我的订单</a></li>
+						<li class="col-lg-1 fl" ><a href="#" class="nactive_title tn">个人资料</a></li>
+					</ul>
+					<span class="col-md-1 fr"><a href="#"><img src="img/confirm/buy_logo.png" class="fl"/></a>
+					<a href="" class="fr tn" style="color: #555555;">登录</a></span>
+				</div>
+			</div>
+		</div>-->
+		<div class="container-fluid" id="header">
+			<div class="container header_in">
+				<span class="logo"><a href="#"><img src="img/index/logo.jpg" /></a></span>
+				<div class="nav">
+					<ul>
+						<li class="home"><a href="index.html">首页</a></li>
+						<li><a href="transfrom.html">我的订单</a></li>
+						<li><a href="person.html">个人资料</a></li>
+						<li><a href="log.html">登录</a></li>
+						<li><a href="buycar.html"><img src="img/index/buycar.jpg" /></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container trans_center">
+			<div class="container trans_banner">
+				<ul>
+					<li class="trans_banner_message">商品信息</li>
+					<li class="trans_banner_price">单价（元）</li>
+					<li class="trans_banner_num">数量</li>				
+					<li class="trans_banner_pay">实付款</li>
+					<li class="trans_banner_option">商品操作</li>
+				</ul>		
+			</div>
+			
+			<div class="container details">
+				
+				<div class="container order">
+					<ul>
+						<li class="order_checkbox">
+							<!--<div class="checkbox_css">
+								<input type="checkbox" value="None" id="list1" name="check" checked />
+								 <label for="list1"></label>
+							</div>-->
+							<input type="checkbox" name="" id="" value="" />
+						</li>
+						<li class="order_date">2018-01-01</li>
+						<li class="order_num">订单号：123456789011</li>
+						<li class="delete" style="float: right;"><a href=""><img src="img/index/delete.jpg"/></a></li>
+					</ul>
+				</div>
+				<div class='container content' >
+					<div class="content_container">
+						<div class="totle_message">
+							<div class="row trans_content_row">
+								<ul>
+									<li class="trans_content_img"><a href="#"></a><img src="img/confirm/item1.jpg" class="img-responsive"/></li>
+									<li class="trans_content_message">
+										<a href="" >医疗用品多功能探测仪器医疗用品<br>多功能探测仪器</a>
+										<p>型号/颜色：</p>
+										<p>规格：</p>
+									</li>
+									<li class="content_center trans_content_price">¥156.00</li>
+									<li class="content_center trans_content_num">1</li>
+								</ul>
+							</div>
+						</div>
+							
+						<div class="trans_content_pay" >
+							<div class="middle_money">
+								<div class="money">¥156.00.00</div>
+								<div class="trans_fee">含运费（0.00元）</div>
+							</div>
+						</div>
+						<div class="trans_content_option">
+							<div class="middle_money">
+								<div class="pay_money"><a href=""  class="trans_details">立即支付</a></div>
+								<div ><a href="" class="trans_details2">订单详情</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container order">
+					<ul>
+						<li class="order_checkbox"><input type="checkbox" name="" id="" value=""  /></li>
+						<li class="order_date">2018-01-01</li>
+						<li class="order_num">订单号：123456789011</li>
+						<li class="delete" style="float: right;"><a href=""><img src="img/index/delete.jpg"/></a></li>
+					</ul>
+				</div>
+				<div class='container content' >
+					<div class="content_container">
+						<div class="totle_message">
+							<div class="row trans_content_row">
+								<ul>
+									<li class="trans_content_img"><a href="#"></a><img src="img/index/item1.jpg" class="img-responsive"/></li>
+									<li class="trans_content_message">
+										<a href="" >医疗用品多功能探测仪器医疗用品<br>多功能探测仪器</a>
+										<p>型号/颜色：</p>
+										<p>规格：</p>
+									</li>
+									<li class="content_center trans_content_price">¥156.00</li>
+									<li class="content_center trans_content_num">1</li>
+								</ul>
+							</div>
+							<div class="row trans_content_row">
+								<ul>
+									<li class="trans_content_img"><a href="#"></a><img src="img/confirm/item1.jpg" class="img-responsive"/></li>
+									<li class="trans_content_message">
+										<a href="" >医疗用品多功能探测仪器医疗用品<br>多功能探测仪器</a>
+										<p>型号/颜色：</p>
+										<p>规格：</p>
+									</li>
+									<li class="content_center trans_content_price">¥156.00</li>
+									<li class="content_center trans_content_num">1</li>
+								</ul>
+							</div>
+						</div>
+							
+						<div class="trans_content_pay">
+							<div class="middle_money" >
+								<div class="money">
+									¥156.00
+								</div>
+								<div class="trans_fee">含运费（0.00元）</div>
+							</div>
+						</div>
+						<div class="trans_content_option" style="">
+							<div class="middle_money">
+								<div class="pay_money">已付款</div>
+								<div ><a href="" class="trans_details2">订单详情</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+			</div>
+			
+			<div class="container page">
+				<span class="btn-group fr">
+					<button type="button" class="btn btn-default">下一页</button>
+				</span>
+				<span class="btn-group fr btn_last">
+					<button type="button" class="btn btn-default">上一页</button>
+				</span>
+			</div>
+		</div>
+		
+		
+		<div class="container-fluid footer">
+			<div class="container nopadding">
+				<div class="footer_top">
+					<p>电话：15108324670</p>
+					<p>地址：四川省成都市高新区环球中心精神可嘉</p>
+					<p>网址：www.baidu.com</p>
+				</div>	
+			</div>
+		</div>
+		<div class="container-fluid footer_bottom">
+			<div class="container nopadding">
+				<ul>
+					<li class="fl">关于我们&nbsp;</li>
+					<li class="fl">|&nbsp 联系我们 &nbsp;</li>
+					<li class="fl">|&nbsp 帮助中心</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	
+</html>

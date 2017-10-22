@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/buycar.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--<div class="container-fluid title_bg" >
+			<div class="container">
+				<div class="row h_title">
+					<ul class="l_title">
+						<li class="col-lg-1 fl"><a href="#"><img src="img/confirm/index_logo.png" class="img-responsive"/></a></li>
+						<li class="col-sm-1 active_title"><a href="#" class="tn">首页</a></li>
+						<li class="col-lg-1 fl" ><a href="#" class="nactive_title tn">我的订单</a></li>
+						<li class="col-lg-1 fl" ><a href="#" class="nactive_title tn">个人资料</a></li>
+					</ul>
+					<span class="col-md-1 fr"><a href="#"><img src="img/confirm/buy_logo.png" class="fl"/></a>
+					<a href="" class="fr tn" style="color: #555555;">登录</a></span>
+				</div>
+			</div>
+		</div>-->
+		
+		<div class="container-fluid" id="header">
+			<div class="container header_in">
+				<span class="logo"><a href="#"><img src="img/index/logo.jpg" /></a></span>
+				<div class="nav">
+					<ul>
+						<li class="home"><a href="index.html">首页</a></li>
+						<li><a href="transfrom.html">我的订单</a></li>
+						<li><a href="person.html">个人资料</a></li>
+						<li><a href="log.html">登录</a></li>
+						<li><a href="buycar.html"><img src="img/index/buycar.jpg" /></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="container buycar_center" >
+			<!--<div class="buycar_title">
+				<span class="buycar_title2 fl">购物车</span>
+				<span class="buycar_title3 fl">全部商品</span>
+				<div class="buycar_sum fr">已选商品（不包含运费）
+					<span class="buycar_sum2">0.00</span>
+					<div class="buycar_sum3 fr"><a href="" class="buycar_sum3 tn" style="text-decoration: none;">结算</a></div>
+				</div>
+			</div>-->
+			
+			<div class="container buycar_banner">
+				<input type="checkbox" name="" id="" value=""/>
+				<span class="buycar_banner_all">全选</span>
+				<span class="buycar_banner_message">商品信息</span>
+				<span class="buycar_banner_price">单价（元）</span>
+				<span class="buycar_banner_num">数量</span>
+				<span class="buycar_banner_cash">金额</span>
+				<span class="buycar_banner_option">操作</span>
+			</div>
+			
+			<div class="container details">
+				<div class="row order_offer ">	
+					供应商：
+					<a href="#" class="offer_message">XXX医院</a>
+				</div>
+				<div class='container content' >
+					
+					<div class="content_container">
+						<div class="row content_row">
+							<ul>
+								<li class="buycar_content_checkbox"><input type="checkbox" name="" id="" value="" /></li>
+								<li class="buycar_content_img"><a href="#"></a><img src="img/confirm//item1.jpg" class="img-responsive"/></li>
+								<li class="buycar_content_message">
+									<a href="" >医疗用品多功能探测仪器医疗用品<br>多功能探测仪器</a>
+									<p>型号/颜色：</p>
+									<p>规格：</p>
+								</li>
+								<li class="content_center buycar_content_price">¥156</li>
+								<li class="content_center buycar_content_num">
+									<em class="sub">-</em>
+									<input type="text" value="1" class="num"/>
+									<em class="add">+</em>
+								</li>
+								<li class="content_center buycar_content_cash">¥156</li>
+								<li class="content_center buycar_content_option" ><a href="" style="color: #234DC8;">移除</a></li></li>
+							</ul>
+						</div>
+						<div class="row content_row">
+							<ul>
+								<li class="buycar_content_checkbox"><input type="checkbox" name="" id="" value="" /></li>
+								<li class="buycar_content_img"><a href="#"></a><img src="img/confirm//item1.jpg" class="img-responsive"/></li>
+								<li class="buycar_content_message">
+									<a href="" >医疗用品多功能探测仪器医疗用品<br>多功能探测仪器</a>
+									<p>型号/颜色：</p>
+									<p>规格：</p>
+								</li>
+								<li class="content_center buycar_content_price">¥156</li>
+								<li class="content_center buycar_content_num">
+									<em class="sub">-</em>
+									<input type="text" value="1" class="num"/>
+									<em class="add">+</em>
+								</li>
+								<li class="content_center buycar_content_cash">¥156</li>
+								<li class="content_center buycar_content_option" ><a href="" style="color: #234DC8;">移除</a></li></li>
+							</ul>
+						</div>
+						<div class="row content_row">
+							<ul>
+								<li class="buycar_content_checkbox"><input type="checkbox" name="" id="" value="" /></li>
+								<li class="buycar_content_img"><a href="#"></a><img src="img/confirm//item1.jpg" class="img-responsive"/></li>
+								<li class="buycar_content_message">
+									<a href="" >医疗用品多功能探测仪器医疗用品<br>多功能探测仪器</a>
+									<p>型号/颜色：</p>
+									<p>规格：</p>
+								</li>
+								<li class="content_center buycar_content_price">¥156</li>
+								<li class="content_center buycar_content_num">
+									<em class="sub">-</em>
+									<input type="text" value="1" class="num"/>
+									<em class="add">+</em>
+								</li>
+								<li class="content_center buycar_content_cash">¥156</li>
+								<li class="content_center buycar_content_option" ><a href="" style="color: #234DC8;">移除</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>	
+			</div>	
+		</div>
+			
+			<div class="container-fluid sum_price">
+				<div class="container">
+					<ul>
+						<li class="sum_price_checkbox">
+							<input type="checkbox" name="" id="" value="" />
+						</li>
+						<li class="sum_price_all">
+							<p>全选</p>
+						</li>
+						<li class="sum_price_delete">
+							<a href="" class="tn">删除</a>
+						</li>
+						<li class="sum_price_s">
+							已选<span class="">1</span>
+							件商品
+						</li>
+						<li class="sum_price_z">
+							总价（不包含运费）<span style="color: orangered;">￥</span><span style="color: orangered;">178.00</span>
+						</li>
+						<li class="price_logo">
+							<a href="confirm.html" style="text-decoration: none;color: white;">结算</a>
+						</li>
+					</ul>		
+				</div>
+			</div>
+		
+			
+		
+		
+		
+		<div class="container-fluid footer">
+			<div class="container nopadding">
+				<div class="footer_top">
+					<p>电话：15108324670</p>
+					<p>地址：四川省成都市高新区环球中心精神可嘉</p>
+					<p>网址：www.baidu.com</p>
+				</div>	
+			</div>
+		</div>
+		<div class="container-fluid footer_bottom">
+			<div class="container nopadding">
+				<ul>
+					<li class="fl">关于我们&nbsp;</li>
+					<li class="fl">|&nbsp 联系我们 &nbsp;</li>
+					<li class="fl">|&nbsp 帮助中心</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//实现加减的部分
+		$(document).ready(function(){
+
+			$(".add").click(function(){
+			var n=$(this).prev().val();
+			var num=parseInt(n)+1;
+			if(num==0){ return;}
+			$(this).prev().val(num);
+			});
+			
+			$(".sub").click(function(){
+			var n=$(this).next().val();
+			var num=parseInt(n)-1;
+			if(num==0){ return}
+			$(this).next().val(num);
+			});
+		})
+	</script>
+</html>
