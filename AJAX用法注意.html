@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+        .map_bottom{position:relative; z-index:1;}
+        .elem_float{position:absolute;  z-index:2;color:#F00;font-weight: 800}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=clhfC2d9tBry6waHScKVqownCgGL9fQ6"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
+    <title>实时定位</title>
+</head>
+<body>
+
+<div id="allmap" class="map_bottom"></div>
+
+<div id="dict">Ajax 加载字典</div>
+<p id="dict_result"></p>
+<p id="flash_time" class="elem_float" style="top: 10px; left: 2px">刷新倒计时:10秒</p>
+<p id="device_state" class="elem_float" style="top: 30px; left: 2px">项圈工作状态:</span>{{ work_status }}</p>
+<button type="button" class="elem_float btn btn-primary" style="bottom: 0px; right:2px" onclick="showUserPos()">主人位置</button>
+<button type="button" class="elem_float btn btn-primary" style="bottom: 0px; left: 2px" onclick="search_road()">规划路径</button>
+
+</body>
+</html>
+<script src="/static/js/jquery.min.js?v=2.1.4"></script>
+<script type="text/javascript">
+
+    var real_point_user;
+    var real_point_pet;
+    var pointArr = [];
+    var pet_lat = 0
+    var pet_lng = 0
+    var latitude = 30.545119;
+    var longitude = 104.078546;
+    var point_pet;
+    var point;
+    var show_user_pos = 0;
+
+    var convertor = new BMap.Convertor();
+    // 百度地图API功能
+    //创建地图
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    var point = new BMap.Point(longitude, latitude);
+    map.centerAndZoom(point, 11);           // 初始化地图,设置中心点坐标和地图级别
+
+
+    var myIcon = new BMap.Icon("http://api.map.baidu.com/img/markers.png", new BMap.Size(23, 25), {
+        offset: new BMap.Size(0, 0), // 指定定位位置
+        imageOffset: new BMap.Size(0, 0 - 2 * 25) // 设置图片偏移
+    });
+    var marker_pet=new BMap.Marker(point,{icon:myIcon});
+
+    var marker = new BMap.Marker(point);  // 创建标注
+
+ //   var marker_pet = new BMap.Marker(point);        // 创建标注
+
+    map.addOverlay(marker);                     // 将标注添加到地图中
+    map.addOverlay(marker_pet);                     // 将标注添加到地图中
+//    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+
+//    var label = new BMap.Label("主人位置",{offset:new BMap.Size(20,-10)});
+//    marker.setLabel(label); //添加百度label
+//    var label_pet = new BMap.Label("宠物位置",{offset:new BMap.Size(20,-10)});
+//    marker_pet.setLabel(label_pet); //添加百度label
+    //隐藏标注
+    if(show_user_pos == 0){
+        marker.hide();
+    }
+
+    function showUserPos(){
+        if(show_user_pos == 0){
+            show_user_pos = 1;
+            marker.show();
+        }else{
+            show_user_pos = 0;
+            marker.hide();
+        }
+    }
+
+    function search_road(){
+        var point_pet = new BMap.Point(pointArr[1]);
+        var point = new BMap.Point(pointArr[0]);
+        var walking = new BMap.WalkingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+        walking.search(real_point_user, real_point_pet);
+    }
+
+    // 定义一个控件类，即function
+    //function ZoomControl(){
+        // 设置默认停靠位置和偏移量
+    //    this.defaultAnchor = BMAP_ANCHOR_TOP_LEFT;
+    //    this.defaultOffset = new BMap.Size(10, 10);
+   // }
+    // 通过JavaScript的prototype属性继承于BMap.Control
+   // ZoomControl.prototype = new BMap.Control();
+
+    // 自定义控件必须实现initialize方法，并且将控件的DOM元素返回
+    // 在本方法中创建个div元素作为控件的容器，并将其添加到地图容器中
+    //ZoomControl.prototype.initialize = function(map){
+        // 创建一个DOM元素
+    //    var div = document.createElement("div");
+        // 添加文字说明
+     //   div.appendChild(document.createTextNode("规划路径"));
+        // 设置样式
+    //    div.style.cursor = "pointer";
+     //   div.style.border = "1px solid gray";
+     //   div.style.backgroundColor = "white";
+        // 绑定事件，规划步行路径
+     //   div.onclick = function(e){
+
+            //var point_pet = new BMap.Point(pointArr[1]);
+            //var point = new BMap.Point(pointArr[0]);
+      //      var walking = new BMap.WalkingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+      //      walking.search(real_point_user, real_point_pet);
+       // }
+        // 添加DOM元素到地图中
+      //  map.getContainer().appendChild(div);
+        // 将DOM元素返回
+     //   return div;
+   // }
+
+    // 创建控件实例
+    //var myZoomCtrl = new ZoomControl();
+    // 添加到地图当中
+    //map.addControl(myZoomCtrl);
+
+    var flush_time = 10;
+    var show_user_position = function(){
+        if(flush_time == 0){
+
+            flush_time = 10;
+            $.getJSON('/wx/ajax_message/', function(ret){
+
+                if("owner_lat" in ret){
+                    latitude = ret.owner_lat;
+                    longitude = ret.owner_lng;
+                    point = new BMap.Point(longitude, latitude);
+
+                    //坐标转换完之后的回调函数
+                    translateCallback = function (data){
+                        //console.log("data.status:%d", data.status);
+                        if(data.status === 0) {
+
+                            real_point_user = data.points[0];
+                            //console.log(real_point_user)
+                            marker.setPosition(data.points[0]);
+                            marker_pet.setPosition(data.points[0]);//没有宠物信息时
+
+
+                            if("pet_lat" in ret){
+                                real_point_pet = data.points[1];
+                                marker_pet.setPosition(data.points[1]);
+                                map.setCenter(data.points[0]);
+                            }
+
+                        }
+                    };
+                    pointArr.splice(0,pointArr.length);//清空数组
+                    pointArr.push(point);
+                    if("pet_lat" in ret){
+                        pet_lat = ret.pet_lat;
+                        pet_lng = ret.pet_lng;
+                        //console.log( latitude);
+                        //console.log(pet_lat);
+
+                        point_pet = new BMap.Point(pet_lng, pet_lat);
+                        pointArr.push(point_pet);
+                    }
+                    else{
+                        marker_pet.remove();
+                    }
+                    //console.log(pointArr)
+                    convertor.translate(pointArr, 1, 5, translateCallback)
+
+                }
+            })}else{
+
+            var flush_p = document.getElementById("flash_time");
+            flush_p.innerHTML= "刷新倒计时："+flush_time+"秒";
+            flush_time = flush_time - 1;
+        }
+
+
+    }
+
+    //页面
+    //show_user_position()
+    //定时刷新地图
+    //setInterval(show_user_position(), 10000)
+
+    show_user_position()
+    setInterval(show_user_position, 1000)
+
+
+
+</script>
