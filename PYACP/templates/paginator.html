@@ -1,0 +1,15 @@
+<div id="pagination" style="position: relative;left: 40%;">
+    <ul id="pagination-flickr" class="page" style="left:40%;">
+    {% if article_list.has_previous %}
+        <li class="previous" style="float: left"><a class='btn btn-default' href="?page={{ article_list.previous_page_number }}">&laquo;上一页</a></li>
+    {% else %}
+    <li class="previous-off" style="float: left"><a class='btn btn-default' disabled="disabled">&laquo;上一页</a></li>
+    {% endif %}
+        <li class="pages" style="float: left;padding: 0px 10px;height: 34px;line-height: 34px">{{ article_list.number }}/{{ article_list.paginator.num_pages }}</li>
+    {% if article_list.has_next %}
+        <li class="next" style="float: left"><a class='btn btn-default' href="?page={{ article_list.next_page_number }}">下一页 &raquo;</a></li>
+    {% else %}
+        <li class="next-off" style="float: left"><a class='btn btn-default' disabled="disabled">下一页 &raquo;</a></li>
+    {% endif %}
+    </ul>
+</div>

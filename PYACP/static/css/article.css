@@ -1,0 +1,30 @@
+/*文章主体*/
+.center{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 10px;
+	background-color: #FFFFFF;
+	color: #333333;
+}
+/*文章标题*/
+.title{
+	margin: 0px;
+	text-align: center;
+	padding: 10px;
+	/*border-bottom: solid 1px #E0E0E0;*/
+}
+.message{
+	margin: 0px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	text-align: right;
+	border-bottom: solid 1px #E0E0E0;
+}
+.author{
+	margin-right: 20px;
+}
+.center p{
+	margin: 28px 0px 0px 0px;
+	font-size: 16px;
+	padding: 0px 10px;
+}

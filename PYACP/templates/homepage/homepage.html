@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"/>
+{% endblock %}
+
+{% block title %}
+    <title>Pyap学习平台</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row banner">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="{% static 'img/index/baner3.jpg' %}" class="img-responsive" alt="1">
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'img/index/baner2.jpg' %}" class="img-responsive" alt="2">
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'img/index/baner1.jpg' %}" class="img-responsive" alt="3">
+                    </div>
+                </div>
+                <a id="carousel-left"  href="#myCarousel" data-slide="prev" class="carousel-control left left_btn" style="background-image: none;"></a>
+                <a id="carousel-right" href="#myCarousel" data-slide="next" class="carousel-control right right_btn" style="background-image: none;"></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row text">
+                由于Python语言的简洁性、易读性以及可扩展性，在国外用Python做科学计算的研究机构日益增多，一些知名大学已经采用Python来教授程序设计课程。例如卡耐基梅隆大学的编程基础、麻省理工学院的计算机科学及编程导论就使用Python语言讲授。众多开源的科学计算软件包都提供了Python的调用接口，例如著名的计算机视觉库OpenCV、三维可视化库VTK、医学图像处理库ITK。而Python专用的科学计算扩展库就更多了，例如如下3个十分经典的科学计算扩展库：NumPy、SciPy和matplotlib，它们分别为Python提供了快速数组处理、数值运算以及绘图功能。因此Python语言及其众多的扩展库所构成的开发环境十分适合工程技术、科研人员处理实验数据、制作图表，甚至开发科学计算应用程序。
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

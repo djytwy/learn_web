@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load myfilters %}
+{% load staticfiles %}
+
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/center.css' %}"/>
+{% endblock %}
+
+{% block title %}
+    <title>Pyap个人中心</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid nopadding person_img">
+    <div class="row message">
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 img">
+            <img src="{% static 'img/center/touxiang.jpg' %}" class="img-circle img-responsive" style="width: 80px;margin: 0px;"/>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            <h4>{{ user.username }}</h4>
+            <p class="vip">vip:{{ user.is_vip }}</p>
+            <p class="scores">积分：{{ user.user_scores }}{{ test }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container person_message">
+
+    <label class="python">
+        我的Python之旅：
+    </label>
+
+    <!--选择题完成情况汇总-->
+    {% if '抱歉' in progress_choice%}
+    <div class="row study_message ">
+        <h4>{{ progress_choice }}</h4>
+    </div>
+    {% else %}
+    <div class="row study_message ">
+
+        <label class="title fl">
+            选择题完成情况：
+        </label>
+
+        <div class="progress fl">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ progress_choice }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{ progress_choice|add_b }};">
+                {{ progress_choice|add_b }}
+            </div>
+        </div>
+
+        <a href="" class="btn btn-success fr training">进行选择题练习</a>
+
+    </div>
+    {% endif %}
+
+    <!--填空题完成情况汇总-->
+    {% if '抱歉' in progress_full %}
+    <div class="row study_message ">
+        <h4>{{ progress_full }}</h4>
+    </div>
+    {% else %}
+    <div class="row study_message ">
+
+        <label class="title fl">
+            填空题完成情况：
+        </label>
+
+        <div class="progress fl">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{ progress_full }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{ progress_full|add_b }};">
+                {{ progress_full|add_b }}
+            </div>
+        </div>
+
+        <a href="" class="btn btn-info fr training">进行填空题练习</a>
+
+    </div>
+    {% endif %}
+
+    <!--项目题完成情况汇总-->
+    {% if '抱歉' in progress_project %}
+    <div class="row study_message ">
+        <h4>{{ progress_project }}</h4>
+    </div>
+    {% else %}
+    <div class="row study_message ">
+
+        <label class="title fl">
+            项目题完成情况：
+        </label>
+
+        <div class="progress fl">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ progress_project }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width: {{ progress_project|add_b }};">
+                {{ progress_project|add_b }}
+            </div>
+        </div>
+
+        <a href="" class="btn btn-warning fr training">进行项目题练习</a>
+
+    </div>
+    {% endif %}
+
+    <div class="mycomment">
+
+        <label class="python">
+            我的提问
+        </label>
+
+
+        <!--提问的区域-->
+        <ul class="comments">
+
+            <!--一个问题的所有内容-->
+            <li class="comment">
+                <!--问题的标题-->
+                <h4 class="">
+                    <a href="">这是问题</a>
+                </h4>
+                <!--自己提出的问题-->
+                <p class="comment_content">
+                    这是内容
+                </p>
+                <!--提出问题的时间-->
+                <p class="time">
+                    2016-01-01
+                </p>
+                <!--反馈提出的问题-->
+                <div class="re_back">
+                    <!--具体的内容，时间-->
+                    <div class="re_back_content">
+                        <img src="{% static 'img/center/touxiang.jpg' %}" class="img-circle"/>
+                        :这是回复
+                        <p class="time">2017-01-01</p>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+{#    <script type="text/javascript">#}
+{#    $(document).ready(function () {#}
+{#        var username=$('#username').text();#}
+{#        $.ajax({#}
+{#            url:'/home/center',#}
+{#            data:{'username':username},#}
+{#            dataType:'json',#}
+{#            type:'POST',#}
+{#            success:function (data) {#}
+{#                console.log(username)#}
+{#            }#}
+{##}
+{#        });#}
+{#    })#}
+{#</script>#}
+{% endblock %}
+
+
+

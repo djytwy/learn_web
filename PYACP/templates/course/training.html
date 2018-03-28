@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>pyap平台首页</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<!--		<link rel="stylesheet" type="text/css" href="css/product.css"/>-->
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container-fluid" id="header">
+			<div class="container header_in">
+				<span class="logo"><a href="">pyap平台</a></span>
+				<div class="nav">
+					<ul>
+						<li><a href="">个人中心</a></li>
+						<li><a data-toggle="modal" data-target="#login" href="">登录</a></li>
+						<li><a data-toggle="modal" data-target="#register" href="">注册</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="container-fluid footer">
+			<div class="container nopadding">
+				<div class="footer_top">
+					<p>电话：15108324670</p>
+					<p>地址：四川省成都市高新区天府软件园</p>
+					<p>网址：www.baidu.com</p>
+				</div>	
+			</div>
+		</div>
+		<div class="container-fluid footer_bottom">
+			<div class="container nopadding">
+				<ul>
+					<li class="fl">关于我们&nbsp;</li>
+					<li class="fl">|&nbsp 联系我们 &nbsp;</li>
+					<li class="fl">|&nbsp 帮助中心</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!--注册弹窗-->
+		<div id="register" class="modal fade" tabindex="-1">
+          	<div class="modal-dialog">
+              	<div class="modal-content">
+                  	<div class="modal-body">
+	                    <button class="close" data-dismiss="modal">
+	                        <span>&times;</span>
+	                    </button>
+	                </div>
+	                <div class="modal-title">
+	                    <h1 class="text-center">注册</h1>
+	                </div>
+	                <div class="modal-body">
+	                    <form class="form-group" action="">
+	                        <div class="form-group">
+	                            <label for="">用户名</label>
+	                            <input class="form-control" type="text" placeholder="6-15位字母或数字">
+	                          </div>
+	                        <div class="form-group">
+	                            <label for="">密码</label>
+	                            <input class="form-control" type="password" placeholder="至少6位字母或数字">
+	                        </div>
+	                        <div class="form-group">
+	                            <label for="">再次输入密码</label>
+	                            <input class="form-control" type="password" placeholder="至少6位字母或数字">
+	                        </div>
+	                        <div class="form-group">
+	                            <label for="">邮箱</label>
+	                            <input class="form-control" type="email" placeholder="例如:123@123.com">
+	                        </div>
+	                        <div class="text-right">
+	                            <button class="btn btn-primary" type="submit">提交</button>
+	                            <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                            </div>
+	                        <a href="" data-toggle="modal" data-dismiss="modal" data-target="#login">已有账号？点我登录</a>
+	                    </form>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+      
+    <!--登录弹窗-->
+		
+	<div id="login" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-title">
+                    <h1 class="text-center">登录</h1>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group" action="">
+                            <div class="form-group">
+                                <label for="">用户名</label>
+                                <input class="form-control" type="text" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="">密码</label>
+                                <input class="form-control" type="password" placeholder="">
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-primary" type="submit">登录</button>
+                                <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                            </div>
+                            <a href="" data-toggle="modal" data-dismiss="modal" data-target="#register">还没有账号？点我注册</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+	</body>
+</html>

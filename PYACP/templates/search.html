@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}"/>
+{% endblock %}
+
+{% block title %}
+    <title>搜索结果</title>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container center">
+        <div class="label"><h4 class="experience">以下是关于    “ <span class="search">{{ search_data }}</span> ” 的搜索结果</h4></div>
+
+        {% for result in result_list %}
+        <div class="row row_s">
+            <a href="{{ 'article' }}?article={{ result.title }}" class=""><h4 class="title">{{ result.title }}</h4></a>
+            <p class="content">
+                {{ result.article }}
+            </p>
+            <div class="message">
+                作者：
+                <span class="author">{{ result.user }}</span>
+                <span class="time">{{ result|date:'Y年m月d日' }}</span>
+            </div>
+        </div>
+        {% endfor %}
+        {% include 'paginator.html' %}
+    </div>
+{% endblock %}
+
+
+

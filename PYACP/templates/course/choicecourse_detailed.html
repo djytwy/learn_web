@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>选择题详情页</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery-3.0.0.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    {{ request.user }}
+    {% for foo in course_choice %}
+        {{ foo.course_title }}
+    {% endfor %}
+
+    答案
+    <div class="container">
+        <form action="{% url 'choice_course_detailed' %}" class="col-md-10" method="post">
+            {% csrf_token %}
+            <select id="choice_select" name="user_anwser" class="form-control">
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+            </select>
+            {% for foo in course_choice %}
+                <input type="hidden" name="course_num" id="" value="{{ foo.choice_num }}">
+            {% endfor %}
+
+            <button id="choice_button" type="submit" class="btn btn-info">提交</button>
+        </form>
+    </div>
+
+    <div>
+        你的答案为
+        <span id="user_anwser">{{ user_anwser }}</span>
+    </div>
+    <div>
+        正确答案为
+        <span id="course_anwser">{{ course_anwser }}</span>
+    </div>
+</body>
+    <script>
+        $(function () {
+{#            alert($('#user_anwser').html())#}
+            if ($('#user_anwser').html()){
+                $('#choice_select').attr("disabled","disabled");
+                $('#choice_button').attr("disabled","disabled");
+            }
+        })
+    </script>
+</html>

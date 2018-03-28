@@ -1,0 +1,163 @@
+# -*- coding: utf-8 -*-
+import datetime
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.hashers import check_password, make_password
+from forms import *
+from models import User
+import json
+
+# Create your views here.
+
+# 用户注册
+
+
+def reg(request):
+    userform = UserForm()
+    if request.method == 'POST':
+        user_input_obj = UserForm(request.POST)
+        # print user_input_obj.errors['password_again'][0]
+        # 对用户输入的数据进行验证
+        if user_input_obj.is_valid():
+            username = user_input_obj.cleaned_data['username']
+            password = user_input_obj.cleaned_data['password']
+            # 注册用户
+            userdata = User.objects.filter(username=username)
+            if not userdata:
+                try:
+                    user = User.objects.create_user(username=username, password=password)
+                    # 登录并返回之前页
+                    user.backend = 'django.contrib.auth.backends.ModelBackend'
+                    login(request, user)
+                    return redirect(request.POST.get('source_url'))
+                except Exception as e:
+                    print e
+                    return render(request, 'homepage/reg.html', {'user': userform})
+            else:
+                user_input_obj.add_error('username', '用户已存在')
+                return render(request, 'homepage/reg.html', {'user': user_input_obj})
+        else:
+            return render(request, 'homepage/reg.html', {'user': user_input_obj})
+    return render(request, 'homepage/reg.html', {'user': userform})
+
+
+@csrf_exempt
+def resiger(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        email = request.POST.get('email')
+        password = make_password(password, None, 'pbkdf2_sha256')
+        try:
+            if User.objects.filter(username=username).first() is None:
+                User.objects.create(username=username, email=email, password=password)
+                success = {'success': 1}
+                return HttpResponse(json.dumps(success), content_type='application/json')
+            else:
+                error = {'error': '这个用户名已经有了'}
+                return HttpResponse(json.dumps(error), content_type='application/json')
+
+        except Exception as e:
+            print e
+    return render(request, 'homepage/homepage.html', locals())
+
+
+# 登录功能
+
+
+@csrf_exempt
+def login_in(request):
+    # post方法提交，获取username, password，登录不需要验证字段，只需要验证密码
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        print username,password
+        # 登录失败时返回json字符串进行局部刷新
+        try:
+            if check_password(password, User.objects.get(username=username).password) is True:
+                user = User.objects.get(username=username)
+                user.backend = 'django.contrib.auth.backends.ModelBackend'
+                login(request, user)
+                ifturn = {
+                            'turn': 'yes'
+                         }
+                return HttpResponse(json.dumps(ifturn), content_type='application/json')
+            else:
+                error = {'error': '用户名/密码错误'}
+                return HttpResponse(json.dumps(error), content_type='application/json')
+        except:
+            error = {'error': '用户名/密码错误'}
+            return HttpResponse(json.dumps(error), content_type='application/json')
+    return
+    # userform = UserForm()
+    # user_input_obj = UserForm(request.POST)
+    # if request.method == 'POST':
+    #     username = request.POST.get('username')
+    #     password = request.POST.get('password')
+    #     try:
+    #         if check_password(password, User.objects.get(username=username).password) is True:
+    #             user = User.objects.get(username=username)
+    #             user.backend = 'django.contrib.auth.backends.ModelBackend'
+    #             login(request, user)
+    #             return redirect(request.POST.get('source_url'))
+    #         else:
+    #             user_input_obj.add_error('username', '用户名/密码错误')
+    #             return render(request, 'homepage/homepage.html', {'user': user_input_obj})
+    #     except Exception as e:
+    #         user_input_obj.add_error('username', '用户名不存在')
+    #         return render(request, 'homepage/homepage.html', {'user': user_input_obj})
+    # return render(request, 'homepage/homepage.html', {'user': userform})
+
+#更改密码
+@login_required(login_url='/home/loginpage')
+def change_password(request):
+    userform = UserForm()
+    userchangeform = ChangePasswordForm()
+    user_input_obj = UserForm(request.POST)
+    user_changepassword_obj = ChangePasswordForm(request.POST)
+    if request.method == 'POST':
+        username = request.user.username
+        password = request.POST.get('password')
+        changepassword = request.POST.get('change_password')
+        # 验证是否输入的密码正确
+        if check_password(password, User.objects.get(username=username).password) is True:
+            if not user_changepassword_obj.errors:
+                user = User.objects.get(username=username)
+                # user.password = changepassword
+                user.set_password(changepassword)
+                user.save()
+                return redirect('/home')
+            else:
+                return render(request, 'homepage/passwordchanged.html',
+                              {'user': userform, 'userchange': user_changepassword_obj})
+        else:
+            user_input_obj.add_error('password', '密码错误')
+            return render(request, 'homepage/passwordchanged.html', {'user': user_input_obj, 'userchange': user_changepassword_obj})
+    return render(request, 'homepage/passwordchanged.html', {'user': userform, 'userchange': userchangeform})
+
+# 退出登录
+@login_required(login_url='/home/loginpage')
+def login_out(request):
+    logout(request)
+    return redirect(request.META['HTTP_REFERER'])
+
+
+def center(request):
+    return render(request, 'center.html')
+
+def homepage(request):
+    username = request.user.username
+    try:
+        user_avatar = User.objects.get(username=username).user_avatar
+        return render(request, 'homepage/homepage.html', {'user_avatar': user_avatar})
+    except:
+        return render(request, 'homepage/homepage.html')
+
+
+def reg_success(request):
+    return render(request, 'reg_success.html')
+# [<User: 305111632>]

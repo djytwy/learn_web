@@ -1,0 +1,54 @@
+/*页面主体的样式*/
+.center{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 10px;
+	border: solid 1px #E0E0E0;
+	background-color: #FFFFFF;
+}
+.experience{
+	margin: 0px;
+	padding-bottom: 20px;
+	border-bottom: solid 1px #2E6DA4;
+}
+.label{
+	text-align: left;
+	color: #333;
+}
+.search{
+	color: red;
+}
+/*每一行的样式*/
+.row_s{
+	border-bottom: solid 1px #E0E0E0;
+	margin: 0px 0px 20px 0px;
+}
+/*每一行标题的样式*/
+.title{
+	color: #234DC8;
+	margin: 10px;
+	cursor: pointer;
+}
+/*每一行内容的样式*/
+.content{
+	margin: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/*每一行内容的作者,时间*/
+.message{
+	text-align: right;
+	color: #333;
+	margin-right: 10px;
+}
+/*作者*/
+.author{
+	margin-right: 20px;
+}
+/*时间*/
+.time{
+
+}

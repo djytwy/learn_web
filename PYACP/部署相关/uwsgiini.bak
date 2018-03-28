@@ -1,0 +1,13 @@
+[uwsgi]
+socket = 127.0.0.1:9090
+chdir=/home/workspace/PYACP
+module=PYACP.wsgi
+home = /root/enev
+master = true         
+processes=2
+threads=2
+max-requests=2000
+chmod-socket=666
+vacuum=true
+daemonize = /home/workspace/PYACP/uwsgi.log
+pythonpath = /root/enev/lib/python2.7/site-packages

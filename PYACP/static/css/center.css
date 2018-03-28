@@ -1,0 +1,73 @@
+ul{
+	list-style: none;
+}
+.person_message{
+	background: #FFFFFF;
+	padding: 15px 30px;
+}
+.python{
+	font-size: 18px;
+	font-weight: 400;
+	padding: 15px 0px;
+	margin: 0px;
+}
+.study_message{
+	width: 100%;
+	height: 60px;
+	padding: 0px 20px;
+	margin:30px 0px;
+	border: solid 1px #E0E0E0;
+}
+.person_img{
+	height: 200px;
+	width: 100%;
+	background: -webkit-gradient(linear,left top,left bottom,from(#7FFFD4),to(#bce8f1));
+	text-align: center;
+}
+.img{
+	margin-left: 20%;
+	position:relative;
+    transform:translateY(30%);
+}
+.message {
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+.title{
+/*	margin-top: 5px;*/
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 60px;
+	width: 20%;
+	display: block;
+}
+.progress{
+	margin-top: 20px;
+	width: 60%;
+}
+.training{
+	margin-top: 12px;
+}
+.study_message:hover{
+	box-shadow: 10px 10px 5px #888888;
+}
+.comments{
+	padding: 20px;
+	border: solid 1px #E0E0E0;
+}
+.comment a{
+	color: #234DC8;
+}
+.time{
+	margin: 5px 0px;
+	text-align: right;
+	color: #333;
+	font-size: 12px;
+}
+.re_back{
+	width: 95%;
+	background-color: #E6E6E6;
+	margin: 0% 2.5%;
+	padding: 0px 10px;
+}

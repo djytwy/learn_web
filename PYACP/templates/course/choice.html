@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/choice.css' %}"/>
+{% endblock %}
+
+{% block custom_js %}
+    <script src="{% static 'js/choice.js' %}" type="text/javascript" charset="utf-8"></script>
+{% endblock %}
+
+{% block title %}
+    <title>选择题</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        {% for choice in course_choice_list %}
+        <div class="row">
+            <div class="choice_title" id="choice_title{{ choice.choice_num }}">{{ choice.course_title }}</div>
+            <div class="choice_warning hidden text-danger" id="choice_warning{{ choice.choice_num }}"></div>
+            <div class="list-group">
+                <a class="list-group-item">{{ choice.choice_A }}</a>
+                <a class="list-group-item">{{ choice.choice_B }}</a>
+                <a class="list-group-item">{{ choice.choice_C }}</a>
+                <a class="list-group-item">{{ choice.choice_D }}</a>
+                <input id="answer{{ choice.choice_num }}" type="hidden" >
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="" style="position: relative;left: 40%;">
+            <input type="button" class="btn btn-info" id="submit" value="点击提交"/>
+            <a type="button" class="btn btn-success">点击返回</a>
+        </div>
+    </div>
+
+
+{% endblock %}

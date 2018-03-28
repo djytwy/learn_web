@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}"/>
+{% endblock %}
+
+{% block title %}
+    <title>PYACP--{{ articles.title }}</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container center">
+        <div class="row title">
+            <h2>{{ articles.title }}</h2>
+        </div>
+        <div class="row message">
+            <span class="author">作者：{{ articles.user }}</span>
+            <span class="time">{{ articles.time|date:'Y年m月d日' }}</span>
+        </div>
+        <p>
+           {{ articles.article }}
+        </p>
+    </div>
+
+{% endblock %}
+
+
+
+
