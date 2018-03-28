@@ -1,0 +1,64 @@
+.content{
+	margin-bottom: 40px;
+	padding: 0px;
+}
+.text{
+	margin-top: 10px;
+}
+.buy{
+	float: right;
+}
+.left_btn{
+	background-image: none;
+	display:flex;
+	align-items:center; 
+	width: 34px; 
+}
+.right_btn{
+	background-image: none;
+	display:flex;
+	align-items:center; 
+	width: 34px;
+	position: absolute;
+	right: 30px;
+}
+
+.row ul{
+	list-style: none;
+}
+
+.row ul li{
+	float: left;
+	margin-bottom: 10px; 
+	padding-right: 20px;
+}
+
+.content_title{
+	font-size:large ;
+	font-weight: 800;
+}
+
+@media (min-width: 1920px) {
+	.content{
+		width: 57.15%;
+	}
+}
+
+@media (max-width: 1200px ) {
+	.message{
+		width: 442px;
+		height: 120px;
+	}
+	.text{
+		width: 280px;
+		float: left;
+		position: relative;
+		top: 20%;
+	}
+	.buy{
+		width: 100px;
+		float: right;
+		position: relative;
+		top: 50%;
+	}
+}

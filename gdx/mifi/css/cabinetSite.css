@@ -1,0 +1,27 @@
+.addrinfo{
+	padding-left: 2%;
+}
+.distance{
+	position: relative;
+	left: 0px;right: auto; 
+	color: #4f99e4;
+	padding-left: 20px;
+	font-weight: 500;
+}
+.useable{
+	position: relative;
+	left: 0px;right: auto; 
+	color: #4f99e4;
+}
+.return{
+	position: absolute;
+	left: auto;
+	right: 100px;
+	color: #4f99e4;
+}
+.go img{
+	transform: rotate(90deg);
+}
+.go p{
+	color: #4F99E4;
+}

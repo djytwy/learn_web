@@ -1,0 +1,97 @@
+.container{
+	background: url(../img/bg_img.png) no-repeat;
+}
+
+.btn{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	
+}
+
+.icon_rent{
+	background: url(../img/rent_index.png) no-repeat;
+	display: block;
+}
+.icon_return{
+	background: url(../img/return.png) no-repeat;
+	display: block;
+}
+.icon_buy{
+	background: url(../img/gift.png) no-repeat;
+	display: block;
+}
+.icon_password{
+	background: url(../img/lock.png) no-repeat;
+	display: block;
+}
+.icon_charge{
+	background: url(../img/charge.png) no-repeat;
+	display: block;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+	.container{
+		width: 375px;
+		height: 667px;
+		background-size: 375px 667px;
+	}
+	.icon_message{
+		width: 93.75px;
+		height:120px; 
+		text-align: center;
+		font-size: 16px;
+		float: left;
+		color: white;
+	}
+	.icon{
+		width: 75px;
+		height: 75px;
+		background-size: 75px 75px;
+		margin: 0px auto;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 320px) {
+	.container{
+		width: 320px;
+		height: 568px;
+		background-size: 320px 568px;
+	}
+	.icon_message{
+		width: 80px;
+		height:100px; 
+		text-align: center;
+		font-size: 14px;
+		float: left;
+		color: white;
+	}
+	.icon{
+		width: 64px;
+		height: 64px;
+		background-size:64px 64px ;
+		margin: 0px auto;
+	}
+}
+
+@media only screen and (min-width: 376px) and (max-width: 414px) {
+	.container{
+		width: 414px;
+		height: 736px;
+		background-size: 414px 736px;
+	}
+	.icon_message{
+		width: 103.5px;
+		height:140px; 
+		text-align: center;
+		font-size: 18px;
+		float: left;
+		color: white;
+	}
+	.icon{
+		width: 82.8px;
+		height: 82.8px;
+		background-size:82.8px 82.8px ;
+		margin: 0px auto;
+	}
+}

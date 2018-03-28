@@ -1,0 +1,38 @@
+.clearfix:before,.clearfix:after{content:"";display:table}.clearfix:after{clear:both}
+.clearfix{*zoom:1}body,html{height:100%;-webkit-tap-highlight-color:transparent}body{background-color:#f8f8f8;font-family:-apple-system-font,Helvetica Neue,Helvetica,sans-serif}ul{list-style:none}
+.link{color:#1aad19}
+.container{overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.m-box{padding:15px}
+.package{width:100%}
+.package li{width:33.33333%;float:left;text-align:center;padding:5px;-webkit-box-sizing:border-box;box-sizing:border-box}
+.package li .placeholder{padding:8px 0;border:1px solid #d9d9d9;border-radius:3px}
+.package li .placeholder span{display:block}
+.package li .placeholder .RMB{font-weight:700;color:#1aad19}
+.package li .placeholder .MB{font-size:.9rem;margin-top:2px;color:#666}
+.package li.on .placeholder{border:1px solid #09bb07}
+.priceInfo-desc{display:block;line-height:1.5}.m-user{width:100%;min-height:150px;padding:2rem 0;background:#232526;background:-webkit-gradient(linear, right top, left top, from(#232526), to(#414345));background:linear-gradient(to left, #232526, #414345)}.m-user img{width:90px;height:90px;display:block;margin:0 auto;border-radius:90px}
+.m-user p{color:#fff;text-align:center;padding-top:15px}
+.m-circular{padding:15px}
+.m-circular .us:before{content:'';width:15px;height:15px;display:inline-block;vertical-align:middle;margin-right:5px;border-radius:15px;margin-top:-2px}
+.m-circular .surplus{color:#1aad19}
+.m-circular .surplus:before{background-color:#1aad19}
+.m-circular .used{color:#999}
+.m-circular .used:before{background-color:#999}
+.m-circular .data{color:#999;font-size:13px;margin-top:15px;line-height:1.5}#donut-chart{width:250px;height:250px;margin:0 auto}
+.device_span{font-size:12px;padding-right:0 !important}
+.device_span span{display:block;height:17px;line-height:17px}
+.device_span .default{color:#e64340}
+.device_span .online{color:#3cc51f}
+.device_span:after{display:none !important}
+.device_info .state:before{content:'';width:15px;height:15px;display:inline-block;vertical-align:middle;margin-right:5px;border-radius:15px;margin-top:-2px}
+.device_info .online:before{background-color:#3cc51f}
+.device_info .offline:before{background-color:#e64340}
+.device_info .desc{padding-top:15px;font-size:13px;color:#999;line-height:1.5}
+.re_orderhd{padding:2.5em 0;text-align:center;margin-top:0;color:#fff;background:#1d4350;background:-webkit-gradient(linear, left top, right top, from(#1d4350), to(#a43931));background:linear-gradient(to right, #1d4350, #a43931)}
+.re_orderhd p{margin-top:8px;font-size:20px}
+.re_orderhd:before{border-top:none}
+.re_orderbd .orderNum{color:#333}
+.re_orderbd .orderDesc{font-size:14px;color:#999;margin-top:5px}
+.re_orderbd .orderDesc b{color:#333;margin-right:3px}
+.re_orderbd .orderRMB{font-size:2em;color:#3cc51f}
+.re_orderbd .orderRMB b{font-size:20px;font-weight:normal}

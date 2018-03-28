@@ -1,0 +1,73 @@
+.container{overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.mifi_trans_box{padding:0px}
+.mifi_trans{ 
+	list-style: none;
+	padding: 0px;
+	margin:2%;
+}
+
+.mifi_trans li{
+	float: left;
+	width: 44%;
+	height: 44%;
+	margin:3%;
+	align-items: center;
+}
+
+.mifi_trans li a{
+	margin: 0px auto;
+	background-position-y:30% ;
+	background-position-x: center;
+	background-repeat: no-repeat;
+	width: 42vw;
+	height: 42vw;
+	color:#333;
+	text-decoration: none;
+	text-align: center;
+	font-size: 16px; 
+	display: block;
+	border: solid 1px #333;
+	border-radius: 15px;
+}
+
+.mifi_trans li a p{
+	margin-top: 64%; 
+	font-size: 52px;
+}
+
+.england{
+	background-color: #F0F0F0;
+	background-image: url(../img/England.png);
+}
+.russia{
+	background-color: #F0F0F0;
+	background-image: url(../img/Russia.png);
+}
+.germany{
+	background-color: #F0F0F0;
+	background-image: url(../img/Germany.png);
+}
+.france{
+	background-color: #F0F0F0;
+	background-image: url(../img/France.png);
+}
+.china{
+	background-color: #F0F0F0;
+	background-image: url(../img/China.png);
+}
+.spain{
+	background-color: #F0F0F0;
+	background-image: url(../img/Spain.png);
+}
+.janpan{
+	background-color: #F0F0F0;
+	background-image: url(../img/Janpan.png);
+}
+.korea{
+	background-color: #F0F0F0;
+	background-image: url(../img/Korea.png);
+}
+a:hover
+{
+background-color:#DDDDDD;
+}
