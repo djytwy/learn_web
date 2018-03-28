@@ -1,1 +1,3 @@
-This is my first web test!
+PYACP:一个基于django的在线学习python平台的demo
+gdx：一套医生网站的前端练手项目
+learn_django:基于django的一些初级学习
