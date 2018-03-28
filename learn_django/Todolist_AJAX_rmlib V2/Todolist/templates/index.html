@@ -1,0 +1,192 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ToDoList</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}"/>
+		<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
+		<script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">
+				<div class="row">
+	 				<div class="col-md-3">
+	 					<h1>ToDoList</h1>
+	 				</div>
+	 			</div>
+			</div>
+        {# 需要添加的事情 #}
+			<div class='things'>
+                <div class="row">
+                    <div id="form_p" class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="还有什么事情要做？" name="dothis" id="dothis">
+                    </div>
+                    <span id="warning">
+                    </span>
+                </div>
+                <button type="button" class="btn btn-primary" name="Add" id="Add">Add</button>
+            </div>
+        {# 从后台取事情刷新到界面上 #}
+            {% for thing in things_list %}
+                <div class="row" id={{ thing.id }}>
+                    <div class="col-md-10">
+                      <div class="form-group">
+                        <textarea class="form-control" rows="3" name="things_text" id="things_text{{ thing.id }}">{{ thing.things }} --- {{ thing.time_sub }}</textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="btn-group" role="group">
+                          <input type="submit" class="btn btn-warning" value='Delete' id={{ thing.id }}>
+                          <input type="submit" class="btn btn-success" value='Edit' id={{ thing.id }}>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                              <input type="checkbox" id={{ thing.id }}>已经做了
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+{#    两种写法的比较，注意差别！！！！第一种选不中$(this)#}
+{#    <body>#}
+{#        <div>#}
+{#            <span onclick="testone()">点我试试？</span>#}
+{#        </div>#}
+{#        <script type="text/javascript">#}
+{#            function testone() {#}
+{#                t=$(this).text();#}
+{#                alert(t);#}
+{#            }#}
+{#        </script>#}
+{#    </body>#}
+{#    <body>#}
+{#        <div>#}
+{#            <span>点我试试？</span>#}
+{#        </div>#}
+{#        <script type="text/javascript">#}
+{#            $(document).ready(function() {#}
+{#                $('span').click(function () {#}
+{#                    t=$(this).text();#}
+{#                    alert(t);#}
+{#                });#}
+{#            })#}
+{#        </script>#}
+{#    </body>#}
+
+    <script type="text/javascript">
+         $(document).ready(function() {
+           // {# AJAX添加事情 #}
+            $('button').click(function(){
+                a = $('#dothis').val();
+                $.ajax({
+                    url: '/add_things/',
+                    type: 'POST',
+                    data: {
+                        "dothis": a,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    datatype: 'json',
+                    success: function (data, statusText, xmlHttpRequest) {
+                        if (data == '这件事已经有了')
+                            $('#warning').text(data);
+                        else
+                        {
+                            $('.container').append(data);
+                            $('#warning').text('');
+                        }
+                        // {# 这里的让span标签的display属性来控制是否显示事件重复提示 #}
+                    }
+                })
+            });
+            // {# AJAX编辑事情 此处用到的是动态加载为了让动态加载的元素响应JS代码故用delegate（）方法#}
+            $("body").delegate(".btn-success","click",function(){
+                var edit_id=$(this).attr('id');
+                console.log(123);
+                var text_id=('things_text'+edit_id);
+                var text_content=$('#'+text_id).val();
+                console.log(text_content);
+                $.ajax({
+                    url: '/Edit/',
+                    type: 'POST',
+                    data: {
+                        'text':text_content,
+                        'things_id':edit_id,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    datatype: 'json',
+                    success: function (data, statusText, xmlHttpRequest) {
+                        $('#'+text_id).val(data)
+                    }
+                })
+            });
+
+            // {# AJAX删除事情 #}
+             $("body").delegate(".btn-warning","click",function(){
+                 var delete_id = $(this).attr('id');
+               $.ajax({
+                   url:'/delete/',
+                   type:'POST',
+                   data:{
+                         'things_id':delete_id,
+                          // {# Django中的CSRF验证 #}
+                         'csrfmiddlewaretoken': '{{ csrf_token }}'
+                   },
+                   datatype:'json',
+                   success:function (data, statusText, xmlHttpRequest) {
+                        // {# 选中ID为data的值的div标签并删除 #}
+                        $("div#"+data).remove();
+                   }
+               })
+             });
+
+           //添加checkbox的功能，点击一下杠掉一个事情
+           $(':checkbox').click(function () {
+                var checkbox_id=$(this).attr('id');
+                var text_id=('things_text'+checkbox_id);
+                $('textarea#'+text_id).toggleClass("del");
+           });
+         });
+           //定时5秒刷新一次界面
+{#           $(function(){#}
+{#                setInterval("updateTime();",20000); //每隔二十秒执行一次#}
+{#                });#}
+{##}
+
+{#            function updateTime(){#}
+{#               var time_arry=[];#}
+{#               var i=0;#}
+{#               l=$('textarea').length;#}
+{#               $('textarea').each(function () {#}
+{#                   time_arry[i] = $(this).val();#}
+{#                   i = i + 1;#}
+{#               });#}
+{#               var jsonString = JSON.stringify(time_arry);#}
+{#                     $.ajax({#}
+{#                       url:'/time/',#}
+{#                       type:'POST',#}
+{#                       data:{#}
+{#                           'times': jsonString,#}
+{#                           'length':l,#}
+{#                           'csrfmiddlewaretoken': '{{ csrf_token }}'#}
+{#                            },#}
+{#                       datatype:'json',#}
+{#                       success:function (data, statusText, xmlHttpRequest) {#}
+{#                            var redata=JSON.parse(data);#}
+{#                            console.log(redata[0]);#}
+{#                            l=$('textarea').length;#}
+{#                            var k=0;#}
+{#                            $('textarea').each(function(){#}
+{#                                    $(this).val(redata[k]);#}
+{#                                    k=k+1#}
+{#                               });#}
+{#                            }#}
+{#                       });#}
+{#               }#}
+    </script>
+</html>

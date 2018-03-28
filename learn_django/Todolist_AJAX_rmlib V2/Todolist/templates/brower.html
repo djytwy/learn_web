@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Brower</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/brower.css'%}"/>
+		<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
+		<script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}"></script>
+    </head>
+<body>
+    <div class="container">
+        <div class="row warning_text">
+            <p>您的浏览器器版本太低！</p>
+        </div>
+        <div class="row text_tip">
+            <p class="m_0">我们检测到您的浏览器版本过低，请进行升级！</p>
+            <p class="m_0">点击下面的浏览器图标进行升级：</p>
+        </div>
+        <div class="row brower">
+            <ul>
+                <li class="col-xs-3"><a href="http://download.firefox.com.cn/releases-sha2/stub/official/zh-CN/Firefox-latest.exe" target="_blank"><img src="img/ff.png" /></a></li>
+                <li class="col-xs-3"><a href="http://www.baidu.com/link?url=qap9EEZHFVsTIAh1Fo9HNphMpawGjC6OLeuczqhJp9toceQh90YI5ibRUUIdq8eBTa_aUUIUYcwSaOA6Or3ua1MjJC73ix-ad4Rl5ghIaBW" target="_blank"><img src="img/gg.png" /></a></li>
+                <li class="col-xs-3"><a href="http://www.baidu.com/link?url=mApgFPAwoqBWoLmVLNVV8OVeFvO9YntkuXHe5I89TcuJi9JkpM99YW18MMaoJG8ck7nVEq6kKYbUTidiauEu5Un6sX8NEYAfPHr2ilkiDPe" target="_blank"><img src="img/ie.png" /></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

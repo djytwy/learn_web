@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}"/>
+{#    <script src="{% static 'js/jquery.min.js' %}"></script>#}
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+    <h1>XMLHttpRequest - Ajax请求</h1>
+    <input type="button" onclick="XmlRequest();" value="发送请求" />
+
+
+    <h1>jQuery - Ajax请求</h1>
+    <input type="text" name="theis" id="theis">
+    <input type="button" onclick="JqRequest();" value="发送请求"  />
+
+
+
+    <script type="text/javascript">
+
+        function XmlRequest(){
+            var xhr = new XMLHttpRequest();
+            // 定义回调函数
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    // 已经接收到全部响应数据，执行以下操作
+                    var data = xhr.responseText;
+                    console.log(data);
+                }
+            };
+            // 指定连接方式和地址----文件方式
+            xhr.open('POST', "/test/", true);
+            // 设置请求头
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset-UTF-8');
+            // 发送请求
+            xhr.send('n1=5;n2=2;');
+        }
+
+        function JqRequest(){
+            a = $('#theis').val();
+            $.post({
+                url: '/test/',
+                data: {'n1':a, "n2": 333},
+                dataType: 'text',
+                success: function(data, statusText, xmlHttpRequest){
+                    console.log(data);
+                }
+            });
+        }
+
+    </script>
+
+</body>
+</html>
